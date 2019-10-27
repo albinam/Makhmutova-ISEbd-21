@@ -9,13 +9,10 @@ namespace WindowsFormArmorCar
 {
     class ArtilleryMount : ArmorCar
     {
-
-
         /// <summary>
         /// Дальность стрельбы
         /// </summary>
         public float GunRange { private set; get; }
-
         /// <summary>
         /// маскировка
         /// </summary>
@@ -24,13 +21,10 @@ namespace WindowsFormArmorCar
         /// флаг
         /// </summary>
         public bool Flag { private set; get; }
-
         /// <summary>
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
-
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -41,7 +35,6 @@ namespace WindowsFormArmorCar
         /// <param name="gunRange">дальность стрельбы</param>
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
-
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
         {
@@ -67,10 +60,8 @@ namespace WindowsFormArmorCar
                 Brush br3 = new SolidBrush(Color.White);
                 g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
                 g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
-
             }
             base.DrawArmorCar(g);
-
             if (Mask)
             {
                 Pen pen1 = new Pen(MainColor);
@@ -84,8 +75,6 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
                 g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
             }
-
-
         }
     }
 }

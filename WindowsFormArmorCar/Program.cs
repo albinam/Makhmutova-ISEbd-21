@@ -16,7 +16,7 @@ namespace WindowsFormArmorCar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormArtilleryMount());
+            Application.Run(new FormMilitaryBase());
         }
     }
 }
