@@ -48,10 +48,10 @@
             this.pictureBoxArtilleryMount.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxArtilleryMount.TabIndex = 0;
             this.pictureBoxArtilleryMount.TabStop = false;
-            this.pictureBoxArtilleryMount.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonCreate
             // 
+            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCreate.Location = new System.Drawing.Point(8, 8);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(289, 23);
@@ -106,7 +106,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(347, 12);
+            this.button1.Location = new System.Drawing.Point(334, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(289, 23);
             this.button1.TabIndex = 6;

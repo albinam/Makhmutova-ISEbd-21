@@ -64,12 +64,17 @@
     <Compile Include="ArmorCar.cs" />
     <Compile Include="ArtilleryMount.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="GunsWithAngle.cs" />
+    <Compile Include="GunsWithPattern.cs" />
+    <Compile Include="SimpleGuns.cs" />
     <Compile Include="FormArtilleryMount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormArtilleryMount.Designer.cs">
       <DependentUpon>FormArtilleryMount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guns.cs" />
+    <Compile Include="IGuns.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
