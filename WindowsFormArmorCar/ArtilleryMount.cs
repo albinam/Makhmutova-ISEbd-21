@@ -58,7 +58,10 @@ namespace WindowsFormArmorCar
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
-
+        /// <summary>
+        /// количество орудий
+        /// </summary>
+        public Guns Guns { private get; set; }
 
         /// <summary>
         /// Конструктор
@@ -70,9 +73,10 @@ namespace WindowsFormArmorCar
         /// <param name="gunRange">дальность стрельбы</param>
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
+        /// <param name="guns">количество орудий</param>
 
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
-      float gunRange, bool flag, bool mask)
+      float gunRange, bool flag, bool mask, Guns guns)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -81,6 +85,8 @@ namespace WindowsFormArmorCar
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
+            Guns = guns;
+
         }
         /// <summary>
         /// Установка позиции автомобиля
@@ -135,7 +141,9 @@ namespace WindowsFormArmorCar
                     break;
             }
         }
-        public void DrawArmorCar(Graphics g)
+
+       
+        public void DrawArmorCar(Graphics g )
         {
             Pen pen = new Pen(Color.Black);
             g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
@@ -145,13 +153,37 @@ namespace WindowsFormArmorCar
                 Brush br3 = new SolidBrush(Color.White);
                 g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
                 g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
-
             }
             Brush br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX + 10, _startPosY + 20, 70, 22);
             Brush br1 = new SolidBrush(DopColor);
             g.FillRectangle(br1, _startPosX + 22, _startPosY + 5, 47, 15);
             Brush br2 = new SolidBrush(Color.Brown);
+            g.DrawRectangle(pen, _startPosX + 7, _startPosY + 42, 77, 10);
+            g.FillRectangle(br2, _startPosX + 7, _startPosY + 42, 77, 10);
+            g.DrawEllipse(pen, _startPosX + 8, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 17, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 26, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 35, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 44, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 53, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 62, _startPosY + 42, 9, 9);
+            g.DrawEllipse(pen, _startPosX + 71, _startPosY + 42, 9, 9);
+            if (Mask)
+            {
+                Pen pen1 = new Pen(MainColor);
+                g.DrawLine(pen1, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
+                g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
+            }
+            DrawGuns drawGuns=new DrawGuns(Guns, _startPosX, _startPosY);
+            drawGuns.GunsDraw(g);
             List<Point> star = new List<Point>(12);
             star.Add(new Point((int)_startPosX + 41, (int)_startPosY + 26));
             star.Add(new Point((int)_startPosX + 39, (int)_startPosY + 29));
@@ -166,30 +198,6 @@ namespace WindowsFormArmorCar
             Pen pen2 = new Pen(Color.Red);
             Brush br4 = new SolidBrush(Color.Red);
             g.DrawPolygon(pen2, star.ToArray<Point>());
-            g.DrawRectangle(pen, _startPosX + 7, _startPosY + 42, 77, 10);
-            g.FillRectangle(br2, _startPosX + 7, _startPosY + 42, 77, 10);
-            g.DrawEllipse(pen, _startPosX + 8, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 17, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 26, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 35, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 44, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 53, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 62, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 71, _startPosY + 42, 9, 9);
-            g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
-            if (Mask)
-            {
-                Pen pen1 = new Pen(MainColor);
-                g.DrawLine(pen1, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
-            }
-            }
         }
     }
+}

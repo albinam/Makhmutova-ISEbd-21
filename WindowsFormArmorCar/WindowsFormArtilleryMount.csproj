@@ -61,6 +61,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtilleryMount.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="DrawGuns.cs" />
+    <Compile Include="FormArtilleryMount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtilleryMount.Designer.cs">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guns.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormArtilleryMount.resx">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
