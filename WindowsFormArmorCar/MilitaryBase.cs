@@ -51,6 +51,7 @@ namespace WindowsFormArmorCar
             {
                 return -1;
             }
+
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))

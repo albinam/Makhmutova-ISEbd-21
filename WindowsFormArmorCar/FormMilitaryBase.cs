@@ -17,6 +17,10 @@ namespace WindowsFormArmorCar
         /// Количество уровней-парковок         
         /// </summary>         
         private const int countLevel = 5;
+        /// <summary>         
+        /// Форма для добавления        
+        /// </summary>         
+        FormArmorCarConfig form; 
         public FormMilitaryBase()
         {
             InitializeComponent();
@@ -40,52 +44,6 @@ namespace WindowsFormArmorCar
                 Graphics gr = Graphics.FromImage(bmp);
                 military_base[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxMilitaryBase.Image = bmp;
-            }
-        }
-        /// <summary> 
-        /// Обработка нажатия кнопки "Припарковать бронированную машину"         
-        /// </summary>         
-        /// <param name="sender"></param>       
-        /// <param name="e"></param>        
-        private void buttonSetArmorCar_Click(object sender, EventArgs e)
-        {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                var armor_car = new ArmorCar(100, 1000, dialog.Color);
-                int place = military_base[listBoxLevels.SelectedIndex] + armor_car;
-                if (place == -1)
-                {
-                    MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                Draw();
-            }
-        }
-        /// <summary>         
-        /// Обработка нажатия кнопки "Припарковать арт.установку"        
-        /// </summary>         
-        /// <param name="sender"></param>        
-        /// <param name="e"></param>        
-        private void buttonSetArtilleryMount_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var artillery_mount = new ArtilleryMount(100, 1000, dialog.Color, dialogDop.Color, 20, true, false);
-
-                        int place = military_base[listBoxLevels.SelectedIndex] + artillery_mount;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        Draw();
-                    }
-                }
             }
         }
         /// <summary>        
@@ -117,6 +75,7 @@ namespace WindowsFormArmorCar
                 }
             }
         }
+
         /// <summary>         
         /// Метод обработки выбора элемента на listBoxLevels         
         /// </summary>         
@@ -126,6 +85,36 @@ namespace WindowsFormArmorCar
         {
             Draw();
         }
+        /// <summary>        
+        /// Обработка нажатия кнопки "Добавить автомобиль"        
+        /// </summary>        
+        /// <param name="sender"></param>        
+        /// <param name="e"></param>        
+        private void buttonSetArmorCar_Click(object sender, EventArgs e)
+        {
+            form = new FormArmorCarConfig();
+            form.AddEvent(AddArmorCar);
+            form.Show();
+        } 
 
+        /// <summary>         
+        /// Метод добавления машины        
+        /// </summary>         
+        /// <param name="car"></param>         
+        private void AddArmorCar(ITransport armor_car)         
+        {            
+        if (armor_car != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = military_base[listBoxLevels.SelectedIndex] + armor_car;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
     }
 }

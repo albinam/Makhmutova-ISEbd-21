@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSetArmorCar = new System.Windows.Forms.Button();
-            this.buttonSetArtilleryMount = new System.Windows.Forms.Button();
             this.buttonTake = new System.Windows.Forms.Button();
             this.pictureBoxMilitaryBase = new System.Windows.Forms.PictureBox();
             this.pictureBoxTakeArmorCar = new System.Windows.Forms.PictureBox();
@@ -38,29 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.labelLevels = new System.Windows.Forms.Label();
+            this.buttonSetArmorCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonSetArmorCar
-            // 
-            this.buttonSetArmorCar.Location = new System.Drawing.Point(662, 135);
-            this.buttonSetArmorCar.Name = "buttonSetArmorCar";
-            this.buttonSetArmorCar.Size = new System.Drawing.Size(123, 62);
-            this.buttonSetArmorCar.TabIndex = 0;
-            this.buttonSetArmorCar.Text = "Припарковать бронированную машину";
-            this.buttonSetArmorCar.UseVisualStyleBackColor = true;
-            this.buttonSetArmorCar.Click += new System.EventHandler(this.buttonSetArmorCar_Click);
-            // 
-            // buttonSetArtilleryMount
-            // 
-            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(662, 203);
-            this.buttonSetArtilleryMount.Name = "buttonSetArtilleryMount";
-            this.buttonSetArtilleryMount.Size = new System.Drawing.Size(122, 75);
-            this.buttonSetArtilleryMount.TabIndex = 1;
-            this.buttonSetArtilleryMount.Text = "Припарковать самоходную артиллерейскую установку";
-            this.buttonSetArtilleryMount.UseVisualStyleBackColor = true;
-            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonTake
             // 
@@ -131,11 +110,22 @@
             this.labelLevels.TabIndex = 9;
             this.labelLevels.Text = "Уровни";
             // 
+            // buttonSetArmorCar
+            // 
+            this.buttonSetArmorCar.Location = new System.Drawing.Point(669, 153);
+            this.buttonSetArmorCar.Name = "buttonSetArmorCar";
+            this.buttonSetArmorCar.Size = new System.Drawing.Size(108, 50);
+            this.buttonSetArmorCar.TabIndex = 10;
+            this.buttonSetArmorCar.Text = "Заказать бронированную машину";
+            this.buttonSetArmorCar.UseVisualStyleBackColor = true;
+            this.buttonSetArmorCar.Click += new System.EventHandler(this.buttonSetArmorCar_Click);
+            // 
             // FormMilitaryBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSetArmorCar);
             this.Controls.Add(this.labelLevels);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.label2);
@@ -144,8 +134,6 @@
             this.Controls.Add(this.pictureBoxTakeArmorCar);
             this.Controls.Add(this.pictureBoxMilitaryBase);
             this.Controls.Add(this.buttonTake);
-            this.Controls.Add(this.buttonSetArtilleryMount);
-            this.Controls.Add(this.buttonSetArmorCar);
             this.Name = "FormMilitaryBase";
             this.Text = "FormMilitaryBase";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).EndInit();
@@ -156,9 +144,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSetArmorCar;
-        private System.Windows.Forms.Button buttonSetArtilleryMount;
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxMilitaryBase;
         private System.Windows.Forms.PictureBox pictureBoxTakeArmorCar;
@@ -167,5 +152,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label labelLevels;
+        private System.Windows.Forms.Button buttonSetArmorCar;
     }
 }

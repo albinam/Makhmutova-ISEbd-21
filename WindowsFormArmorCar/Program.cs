@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace WindowsFormArmorCar
 {
+    public delegate void armor_carDelegate(ITransport armor_car);
+
     static class Program
     {
         /// <summary>

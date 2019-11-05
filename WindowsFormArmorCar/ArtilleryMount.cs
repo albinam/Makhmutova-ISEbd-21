@@ -38,12 +38,10 @@ namespace WindowsFormArmorCar
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
         {
-
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
-
         }
 
         public override void DrawArmorCar(Graphics g)
@@ -75,6 +73,13 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
                 g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
             }
+        }
+        /// Смена дополнительного цвета        
+        /// </summary>        
+        /// <param name="color"></param>        
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
         }
     }
 }
