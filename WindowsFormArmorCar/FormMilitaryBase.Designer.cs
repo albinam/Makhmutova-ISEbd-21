@@ -36,13 +36,15 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
+            this.labelLevels = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSetArmorCar
             // 
-            this.buttonSetArmorCar.Location = new System.Drawing.Point(657, 23);
+            this.buttonSetArmorCar.Location = new System.Drawing.Point(662, 135);
             this.buttonSetArmorCar.Name = "buttonSetArmorCar";
             this.buttonSetArmorCar.Size = new System.Drawing.Size(123, 62);
             this.buttonSetArmorCar.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // buttonSetArtilleryMount
             // 
-            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(657, 106);
+            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(662, 203);
             this.buttonSetArtilleryMount.Name = "buttonSetArtilleryMount";
             this.buttonSetArtilleryMount.Size = new System.Drawing.Size(122, 75);
             this.buttonSetArtilleryMount.TabIndex = 1;
@@ -105,17 +107,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(676, 269);
+            this.label2.Location = new System.Drawing.Point(676, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Забрать машину";
+            // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.Location = new System.Drawing.Point(662, 34);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(120, 95);
+            this.listBoxLevels.TabIndex = 8;
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            // 
+            // labelLevels
+            // 
+            this.labelLevels.AutoSize = true;
+            this.labelLevels.Location = new System.Drawing.Point(696, 18);
+            this.labelLevels.Name = "labelLevels";
+            this.labelLevels.Size = new System.Drawing.Size(45, 13);
+            this.labelLevels.TabIndex = 9;
+            this.labelLevels.Text = "Уровни";
             // 
             // FormMilitaryBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelLevels);
+            this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBox1);
@@ -143,5 +165,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBoxLevels;
+        private System.Windows.Forms.Label labelLevels;
     }
 }

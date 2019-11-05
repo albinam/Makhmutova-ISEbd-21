@@ -9,7 +9,11 @@ namespace WindowsFormArmorCar
 {
     public class MilitaryBase<T> where T : class, ITransport
     {
-        private T[] places;
+        private Dictionary<int, T> places;
+        /// <summary>         
+        /// Максимальное количество мест на парковке         
+        /// </summary>        
+        private int _maxCount; 
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         /// <summary>        
@@ -28,13 +32,10 @@ namespace WindowsFormArmorCar
         /// /// <param name="pictureHeight">Рамзер парковки - высота</param>         
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
-            places = new T[sizes];
+            _maxCount = sizes;
+            places = new Dictionary<int, T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-            for (int i = 0; i < places.Length; i++)
-            {
-                places[i] = null;
-            }
         }
 
         /// <summary>         
@@ -46,39 +47,38 @@ namespace WindowsFormArmorCar
         /// <returns></returns>     
         public static int operator +(MilitaryBase<T> p, T artilleryMount)
         {
-            for (int i = 0; i < p.places.Length; i++)
+            if (p.places.Count == p._maxCount)
+            {
+                return -1;
+            }
+            for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p.places[i] = artilleryMount;
-                    p.places[i].SetPosition(5 + i / 5 * _placeSizeWidth + 5,
-                        i % 5 * _placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
+                    p.places.Add(i, artilleryMount);
+                    p.places[i].SetPosition(5 + i / 5 * _placeSizeWidth + 5, i % 5 * _placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
             }
             return -1;
         }
-        /// <summary>         
-        /// Перегрузка оператора вычитания       
-        /// Логика действия: с парковки забираем автомобиль      
-        /// </summary>         
-        /// <param name="p">Парковка</param>       
-        /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
-        /// <returns></returns> 
-        public static T operator -(MilitaryBase<T> p, int index)
+    /// <summary>         
+    /// Перегрузка оператора вычитания       
+    /// Логика действия: с парковки забираем автомобиль      
+    /// </summary>         
+    /// <param name="p">Парковка</param>       
+    /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
+    /// <returns></returns> 
+    public static T operator -(MilitaryBase<T> p, int index)
         {
-            if (index < 0 || index > p.places.Length)
-            {
-                return null;
-            }
-            if (!p.CheckFreePlace(index))
+           if (!p.CheckFreePlace(index))
             {
                 T car = p.places[index];
-                p.places[index] = null;
+                p.places.Remove(index);
                 return car;
             }
             return null;
-        }
+        }      
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
@@ -86,7 +86,7 @@ namespace WindowsFormArmorCar
         /// <returns></returns>         
         private bool CheckFreePlace(int index)
         {
-            return places[index] == null;
+            return !places.ContainsKey(index);
         }
         /// <summary>         
         /// Метод отрисовки парковки        
@@ -95,12 +95,10 @@ namespace WindowsFormArmorCar
         public void Draw(Graphics g)
         {
             DrawMilitaryBase(g);
-            for (int i = 0; i < places.Length; i++)
+            var keys = places.Keys.ToList();
+            for (int i = 0; i < keys.Count; i++)
             {
-                if (!CheckFreePlace(i))
-                {//если место не пустое                     
-                    places[i].DrawArmorCar(g);
-                }
+                places[keys[i]].DrawArmorCar(g);
             }
         }
         /// <summary>         
@@ -110,8 +108,8 @@ namespace WindowsFormArmorCar
         private void DrawMilitaryBase(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);             //границы праковки             
-            g.DrawRectangle(pen, 0, 0, (places.Length / 5) * _placeSizeWidth, 400);
-            for (int i = 0; i < places.Length / 4; i++)
+            g.DrawRectangle(pen, 0, 0, (_maxCount / 5) * _placeSizeWidth, 400);
+            for (int i = 0; i < _maxCount / 4; i++)
             {
                 //отрисовываем, по 5 мест на линии                 
                 for (int j = 0; j < 5; ++j)
