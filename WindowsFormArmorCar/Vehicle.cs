@@ -9,6 +9,7 @@ namespace WindowsFormArmorCar
 {
     public abstract class Vehicle : ITransport
     {
+
         protected float _startPosX;
         /// <summary>
         /// Правая кооридната отрисовки автомобиля
@@ -22,18 +23,22 @@ namespace WindowsFormArmorCar
         /// Высота окна отрисовки
         /// </summary>
         protected int _pictureHeight;
+
         /// <summary>
         /// Максимальная скорость
         /// </summary>
         public int MaxSpeed { protected set; get; }
+
         /// <summary>
         /// Вес автомобиля
         /// </summary>
         public float Weight { protected set; get; }
+
         /// <summary>
         /// Основной цвет кузова
         /// </summary>
         public Color MainColor { protected set; get; }
+
 
         public void SetPosition(int x, int y, int width, int height)
         {
@@ -45,5 +50,7 @@ namespace WindowsFormArmorCar
         public abstract void DrawArmorCar(Graphics g);
 
         public abstract void MoveTransport(Direction direction);
+
+        public abstract ITransport Clone();
     }
 }

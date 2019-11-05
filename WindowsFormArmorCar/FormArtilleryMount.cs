@@ -25,7 +25,7 @@ namespace WindowsFormArmorCar
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             car = new ArtilleryMount(100, 300, Color.Green,
-           Color.Black, 20, true, true);
+           Color.Black, 20, true, false,Guns.Three);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
            pictureBoxArtilleryMount.Height);
             Draw();
