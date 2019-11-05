@@ -90,7 +90,6 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
-
         private void buttonSetAll_Click(object sender, EventArgs e)
         {
             int place = military_base * 15;

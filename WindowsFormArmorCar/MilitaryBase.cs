@@ -90,26 +90,23 @@ namespace WindowsFormArmorCar
         /// <param name="p">Парковка</param>       
         /// <param name="x">количество мест на парковке</param>         
         /// <returns></returns> 
-        public static int operator *(MilitaryBase<T, N> p, int x)
+        public static int operator *(MilitaryBase<T, N> p, int size)
         {
-            if (p.places.Length + 1 < x)
+            List<T> clones = new List<T>();
+            if (p.places.Length + 1 < size)
             {
                 return -1;
             }
-
-            List<T> to_copy = new List<T>();
-
             for (int i = 0; i < p.places.Length; i++)
             {
                 if (!p.CheckFreePlace(i))
                 {
-                    to_copy.Add(p.places[i]);
+                    clones.Add(p.places[i]);
                 }
             }
-
-            foreach (T vehicle in to_copy)
+            foreach (T vehicle in clones)
             {
-                for (int i = 0; i < x; i++)
+                for (int i = 0; i < size; i++)
                 {
                     T newVehicle = (T)vehicle.Clone();
                     int index = p + newVehicle;
