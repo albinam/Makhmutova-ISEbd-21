@@ -12,14 +12,15 @@ namespace WindowsFormArmorCar
 {
     public partial class FormMilitaryBase : Form
     {
-        MilitaryBase<ITransport, IGuns> military_base;
+        MilitaryBase<ITransport> military_base;
 
         public FormMilitaryBase()
         {
             InitializeComponent();
-            military_base = new MilitaryBase<ITransport, IGuns>(15, pictureBoxMilitaryBase.Width, pictureBoxMilitaryBase.Height);
+            military_base = new MilitaryBase<ITransport>(15, pictureBoxMilitaryBase.Width, pictureBoxMilitaryBase.Height);
             Draw();
         }
+
         /// <summary>         
         /// Метод отрисовки парковки         
         /// </summary>         
@@ -30,6 +31,7 @@ namespace WindowsFormArmorCar
             military_base.Draw(gr);
             pictureBoxMilitaryBase.Image = bmp;
         }
+
         /// <summary> 
         /// Обработка нажатия кнопки "Припарковать бронированную машину"         
         /// </summary>         
@@ -45,6 +47,7 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
+
         /// <summary>         
         /// Обработка нажатия кнопки "Припарковать арт.установку"        
         /// </summary>         
@@ -58,11 +61,13 @@ namespace WindowsFormArmorCar
                 ColorDialog dialogDop = new ColorDialog();
                 if (dialogDop.ShowDialog() == DialogResult.OK)
                 {
-                    var artillery_mount = new ArtilleryMount(100, 1000, dialog.Color, dialogDop.Color, 20, true, false, Guns.Three);
-                    int place = military_base + artillery_mount;
+                    var artilleru_mount = new ArtilleryMount(100, 1000, dialog.Color, dialogDop.Color, 20, true, false);
+
+                    int place = military_base + artilleru_mount;
                     Draw();
                 }
             }
+
         }
         /// <summary>        
         /// Обработка нажатия кнопки "Забрать"       
@@ -90,15 +95,7 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
-        private void buttonSetAll_Click(object sender, EventArgs e)
-        {
-            int place = military_base * 15;
-            Draw();
-        }
-        private void buttonRemoveAll_Click(object sender, EventArgs e)
-        {
-            int place = military_base / 15;
-            Draw();
-        }
+
+       
     }
 }

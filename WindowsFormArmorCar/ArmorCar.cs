@@ -98,11 +98,6 @@ namespace WindowsFormArmorCar
             Pen pen2 = new Pen(Color.Red);
             g.DrawPolygon(pen2, star.ToArray<Point>());
         }
-
-        public override ITransport Clone()
-        {
-            return new ArmorCar(MaxSpeed, Weight, MainColor);
-        }
     }
 }
 

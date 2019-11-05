@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormArmorCar
 {
-    public class MilitaryBase<T, N> where T : class, ITransport where N : class, IGuns
+    public class MilitaryBase<T> where T : class, ITransport
     {
-        public T[] places;
-        private N[] placesGuns;
+        private T[] places;
         private int PictureWidth { get; set; }
-
         private int PictureHeight { get; set; }
         /// <summary>        
         /// Размер парковочного места (ширина)         
@@ -31,7 +29,6 @@ namespace WindowsFormArmorCar
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
             places = new T[sizes];
-            placesGuns = new N[sizes];
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
             for (int i = 0; i < places.Length; i++)
@@ -39,6 +36,7 @@ namespace WindowsFormArmorCar
                 places[i] = null;
             }
         }
+
         /// <summary>         
         /// Перегрузка оператора сложения         
         /// Логика действия: на парковку добавляется автомобиль         
@@ -46,7 +44,7 @@ namespace WindowsFormArmorCar
         /// <param name="p">Парковка</param>      
         /// <param name=" artilleryMount">Добавляемый автомобиль</param>      
         /// <returns></returns>     
-        public static int operator +(MilitaryBase<T, N> p, T artilleryMount)
+        public static int operator +(MilitaryBase<T> p, T artilleryMount)
         {
             for (int i = 0; i < p.places.Length; i++)
             {
@@ -67,7 +65,7 @@ namespace WindowsFormArmorCar
         /// <param name="p">Парковка</param>       
         /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
         /// <returns></returns> 
-        public static T operator -(MilitaryBase<T, N> p, int index)
+        public static T operator -(MilitaryBase<T> p, int index)
         {
             if (index < 0 || index > p.places.Length)
             {
@@ -76,60 +74,11 @@ namespace WindowsFormArmorCar
             if (!p.CheckFreePlace(index))
             {
                 T car = p.places[index];
-
                 p.places[index] = null;
                 return car;
             }
             return null;
         }
-
-        /// <summary>         
-        /// Перегрузка оператора умножения       
-        /// Логика действия: заполняем всю парковку "клонами" 1 автомобиля      
-        /// </summary>         
-        /// <param name="p">Парковка</param>       
-        /// <param name="x">количество мест на парковке</param>         
-        /// <returns></returns> 
-        public static int operator *(MilitaryBase<T, N> p, int size)
-        {
-            List<T> clones = new List<T>();
-            if (p.places.Length + 1 < size)
-            {
-                return -1;
-            }
-            for (int i = 0; i < p.places.Length; i++)
-            {
-                if (!p.CheckFreePlace(i))
-                {
-                    clones.Add(p.places[i]);
-                }
-            }
-            foreach (T vehicle in clones)
-            {
-                for (int i = 0; i < size; i++)
-                {
-                    T newVehicle = (T)vehicle.Clone();
-                    int index = p + newVehicle;
-                }
-            }
-            return 1;
-        }
-        /// <summary>         
-        /// Перегрузка оператора деления
-        /// Логика действия: убираем все машины с парковки      
-        /// </summary>         
-        /// <param name="p">Парковка</param>       
-        /// <param name="x">количество мест на парковке</param>         
-        /// <returns></returns> 
-        public static int operator /(MilitaryBase<T, N> p, int x)
-        {
-            for (int i = 0; i < x; i++)
-            {
-                p.places[i] = null;
-            }
-            return 1;
-        }
-
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
@@ -155,9 +104,9 @@ namespace WindowsFormArmorCar
             }
         }
         /// <summary>         
-        /// Метод отрисовки разметки парковочных мест      
-        /// </summary>       
-        /// <param name="g"></param>        
+        /// /// Метод отрисовки разметки парковочных мест      
+        /// /// </summary>       
+        /// /// <param name="g"></param>        
         private void DrawMilitaryBase(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);             //границы праковки             
