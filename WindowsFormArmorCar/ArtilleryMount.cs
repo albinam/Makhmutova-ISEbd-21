@@ -62,7 +62,6 @@ namespace WindowsFormArmorCar
         /// количество орудий
         /// </summary>
         public Guns Guns { private get; set; }
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -86,7 +85,6 @@ namespace WindowsFormArmorCar
             Flag = flag;
             Mask = mask;
             Guns = guns;
-
         }
         /// <summary>
         /// Установка позиции автомобиля
@@ -140,9 +138,7 @@ namespace WindowsFormArmorCar
                     }
                     break;
             }
-        }
-
-       
+        }       
         public void DrawArmorCar(Graphics g )
         {
             Pen pen = new Pen(Color.Black);

@@ -47,7 +47,6 @@
             this.pictureBoxArtilleryMount.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxArtilleryMount.TabIndex = 0;
             this.pictureBoxArtilleryMount.TabStop = false;
-            this.pictureBoxArtilleryMount.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonCreate
             // 
