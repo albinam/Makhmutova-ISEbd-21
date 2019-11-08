@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 namespace WindowsFormArmorCar
 {
-    public delegate void armor_carDelegate(ITransport armor_car);
-
     static class Program
     {
         /// <summary>
@@ -18,7 +16,7 @@ namespace WindowsFormArmorCar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMilitaryBase());
+            Application.Run(new FormArtilleryMount());
         }
     }
 }
