@@ -20,7 +20,6 @@ namespace WindowsFormArmorCar
             military_base = new MilitaryBase<ITransport>(15, pictureBoxMilitaryBase.Width, pictureBoxMilitaryBase.Height);
             Draw();
         }
-
         /// <summary>         
         /// Метод отрисовки парковки         
         /// </summary>         
@@ -31,7 +30,6 @@ namespace WindowsFormArmorCar
             military_base.Draw(gr);
             pictureBoxMilitaryBase.Image = bmp;
         }
-
         /// <summary> 
         /// Обработка нажатия кнопки "Припарковать бронированную машину"         
         /// </summary>         
@@ -47,7 +45,6 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
-
         /// <summary>         
         /// Обработка нажатия кнопки "Припарковать арт.установку"        
         /// </summary>         
@@ -67,7 +64,6 @@ namespace WindowsFormArmorCar
                     Draw();
                 }
             }
-
         }
         /// <summary>        
         /// Обработка нажатия кнопки "Забрать"       
@@ -94,8 +90,6 @@ namespace WindowsFormArmorCar
                 }
                 Draw();
             }
-        }
-
-       
+        }      
     }
 }
