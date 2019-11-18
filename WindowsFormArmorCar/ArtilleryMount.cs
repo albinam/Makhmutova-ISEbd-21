@@ -9,13 +9,11 @@ namespace WindowsFormArmorCar
 {
     class ArtilleryMount : ArmorCar
     {
-
         private int GunType;
         /// <summary>
         /// Дальность стрельбы
         /// </summary>
         public float GunRange { private set; get; }
-
         /// <summary>
         /// маскировка
         /// </summary>
@@ -24,14 +22,11 @@ namespace WindowsFormArmorCar
         /// флаг
         /// </summary>
         public bool Flag { private set; get; }
-
         /// <summary>
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
         public Guns NumberOfGuns { private set; get; }
-
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -42,18 +37,15 @@ namespace WindowsFormArmorCar
         /// <param name="gunRange">дальность стрельбы</param>
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
-
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask, Guns numberOfGuns) : base(maxSpeed, weight, mainColor)
         {
-
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
             NumberOfGuns = numberOfGuns;
             GunType = new Random().Next(0, 3);
-
         }
 
         public override void DrawArmorCar(Graphics g)

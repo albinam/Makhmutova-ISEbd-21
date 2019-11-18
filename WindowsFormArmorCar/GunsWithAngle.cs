@@ -28,7 +28,6 @@ namespace WindowsFormArmorCar
             Brush br3 = new SolidBrush(Color.Black);
             g.FillRectangle(br3, _startPosX + 25, _startPosY + 9, 25, 1);
             g.FillRectangle(br3, _startPosX + 25, _startPosY + 11, 25, 1);
-
             Pen pen = new Pen(Color.Black);
             if (n == 0)
             {

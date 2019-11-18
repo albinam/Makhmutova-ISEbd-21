@@ -23,7 +23,7 @@ namespace WindowsFormArmorCar
            Color.Black, 20, true, false,Guns.Three);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
            pictureBoxArtilleryMount.Height);
-            Draw();
+            Draw();
         }
         private void Draw()
         {
@@ -32,7 +32,6 @@ namespace WindowsFormArmorCar
             car.DrawArmorCar(gr);
             pictureBoxArtilleryMount.Image = bmp;
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
@@ -53,14 +52,12 @@ namespace WindowsFormArmorCar
             }
             Draw();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             car = new ArmorCar(100, 300, Color.Green);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
            pictureBoxArtilleryMount.Height);
             Draw();
-
         }
     }
 }
