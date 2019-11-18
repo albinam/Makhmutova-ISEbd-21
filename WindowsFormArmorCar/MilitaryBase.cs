@@ -37,7 +37,6 @@ namespace WindowsFormArmorCar
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
         }
-
         /// <summary>         
         /// Перегрузка оператора сложения         
         /// Логика действия: на парковку добавляется автомобиль         
@@ -51,7 +50,6 @@ namespace WindowsFormArmorCar
             {
                 return -1;
             }
-
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))

@@ -75,7 +75,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-
         /// <summary>         
         /// Метод обработки выбора элемента на listBoxLevels         
         /// </summary>         
@@ -96,7 +95,6 @@ namespace WindowsFormArmorCar
             form.AddEvent(AddArmorCar);
             form.Show();
         } 
-
         /// <summary>         
         /// Метод добавления машины        
         /// </summary>         

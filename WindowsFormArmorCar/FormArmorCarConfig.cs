@@ -13,9 +13,7 @@ namespace WindowsFormArmorCar
     public partial class FormArmorCarConfig : Form
     {
         ITransport armor_car = null;
-
         private event armor_carDelegate eventAddArmorCar;
-
         public FormArmorCarConfig()
         {
             InitializeComponent();
@@ -27,7 +25,6 @@ namespace WindowsFormArmorCar
             panelYellow.MouseDown += panelColor_MouseDown;
             panelPink.MouseDown += panelColor_MouseDown;
             panelBlue.MouseDown += panelColor_MouseDown;
-
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
         private void DrawArmorCar()
@@ -64,7 +61,6 @@ namespace WindowsFormArmorCar
             (sender as Control).DoDragDrop((sender as Control).BackColor, 
                 DragDropEffects.Move | DragDropEffects.Copy);
         } 
-
         /// <summary>        
         /// Проверка получаемой информации (ее типа на соответствие требуемому)        
         /// </summary>         
@@ -94,7 +90,6 @@ namespace WindowsFormArmorCar
                 DrawArmorCar();
             }
         }
-
         /// <summary>         
         /// Принимаем дополнительный цвет        
         /// </summary>        
@@ -170,8 +165,6 @@ namespace WindowsFormArmorCar
         {
             eventAddArmorCar?.Invoke(armor_car);
             Close();
-        }
-
-        
+        } 
     }
 }

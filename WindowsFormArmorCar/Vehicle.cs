@@ -34,7 +34,6 @@ namespace WindowsFormArmorCar
         /// Основной цвет кузова
         /// </summary>
         public Color MainColor { protected set; get; }
-
         public void SetPosition(int x, int y, int width, int height)
         {
             _startPosX = x;
@@ -47,7 +46,6 @@ namespace WindowsFormArmorCar
             MainColor = color;
         }
         public abstract void DrawArmorCar(Graphics g);
-
         public abstract void MoveTransport(Direction direction);
     }
 }
