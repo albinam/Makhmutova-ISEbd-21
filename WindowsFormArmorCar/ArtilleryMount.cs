@@ -47,7 +47,6 @@ namespace WindowsFormArmorCar
             NumberOfGuns = numberOfGuns;
             GunType = new Random().Next(0, 3);
         }
-
         public override void DrawArmorCar(Graphics g)
         {
             base.DrawArmorCar(g);

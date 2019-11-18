@@ -128,7 +128,7 @@
             this.Controls.Add(this.pictureBoxArtilleryMount);
             this.Name = "FormArtilleryMount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
 
