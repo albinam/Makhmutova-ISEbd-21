@@ -28,7 +28,6 @@ namespace WindowsFormArmorCar
             Brush br3 = new SolidBrush(Color.Black);
             g.FillRectangle(br3, _startPosX + 25, _startPosY + 9, 25, 1);
             g.FillRectangle(br3, _startPosX + 25, _startPosY + 11, 25, 1);
-
             Pen pen = new Pen(Color.Black);
             if (n == 0)
             {
@@ -44,7 +43,6 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 9);
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 9, _startPosX + 89, _startPosY + 6);
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 15, _startPosX + 89, _startPosY + 12);
-
             }
         }
     }

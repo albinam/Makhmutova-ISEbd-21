@@ -23,14 +23,11 @@ namespace WindowsFormArmorCar
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес автомобиля</param>
         /// <param name="mainColor">Основной цвет кузова</param>
-
-
         public ArmorCar(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-
         }
         public override void MoveTransport(Direction direction)
         {
@@ -97,6 +94,10 @@ namespace WindowsFormArmorCar
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 29));
             Pen pen2 = new Pen(Color.Red);
             g.DrawPolygon(pen2, star.ToArray<Point>());
+        }
+        public override ITransport Clone()
+        {
+            return new ArmorCar(MaxSpeed, Weight, MainColor);
         }
     }
 }

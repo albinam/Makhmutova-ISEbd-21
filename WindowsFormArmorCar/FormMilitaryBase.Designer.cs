@@ -36,13 +36,15 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonSetAll = new System.Windows.Forms.Button();
+            this.buttonRemoveAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSetArmorCar
             // 
-            this.buttonSetArmorCar.Location = new System.Drawing.Point(657, 23);
+            this.buttonSetArmorCar.Location = new System.Drawing.Point(657, 2);
             this.buttonSetArmorCar.Name = "buttonSetArmorCar";
             this.buttonSetArmorCar.Size = new System.Drawing.Size(123, 62);
             this.buttonSetArmorCar.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // buttonSetArtilleryMount
             // 
-            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(657, 106);
+            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(658, 70);
             this.buttonSetArtilleryMount.Name = "buttonSetArtilleryMount";
             this.buttonSetArtilleryMount.Size = new System.Drawing.Size(122, 75);
             this.buttonSetArtilleryMount.TabIndex = 1;
@@ -111,11 +113,33 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Забрать машину";
             // 
+            // buttonSetAll
+            // 
+            this.buttonSetAll.Location = new System.Drawing.Point(657, 151);
+            this.buttonSetAll.Name = "buttonSetAll";
+            this.buttonSetAll.Size = new System.Drawing.Size(121, 38);
+            this.buttonSetAll.TabIndex = 8;
+            this.buttonSetAll.Text = "Заполнить всю парковку";
+            this.buttonSetAll.UseVisualStyleBackColor = true;
+            this.buttonSetAll.Click += new System.EventHandler(this.buttonSetAll_Click);
+            // 
+            // buttonRemoveAll
+            // 
+            this.buttonRemoveAll.Location = new System.Drawing.Point(662, 199);
+            this.buttonRemoveAll.Name = "buttonRemoveAll";
+            this.buttonRemoveAll.Size = new System.Drawing.Size(115, 34);
+            this.buttonRemoveAll.TabIndex = 9;
+            this.buttonRemoveAll.Text = "Очистить парковку";
+            this.buttonRemoveAll.UseVisualStyleBackColor = true;
+            this.buttonRemoveAll.Click += new System.EventHandler(this.buttonRemoveAll_Click);
+            // 
             // FormMilitaryBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRemoveAll);
+            this.Controls.Add(this.buttonSetAll);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBox1);
@@ -143,5 +167,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSetAll;
+        private System.Windows.Forms.Button buttonRemoveAll;
     }
 }

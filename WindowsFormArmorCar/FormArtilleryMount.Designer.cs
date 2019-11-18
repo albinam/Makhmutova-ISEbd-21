@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormArtilleryMount));
             this.pictureBoxArtilleryMount = new System.Windows.Forms.PictureBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateArtilleryMount = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCreateArmorCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,18 +48,17 @@
             this.pictureBoxArtilleryMount.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxArtilleryMount.TabIndex = 0;
             this.pictureBoxArtilleryMount.TabStop = false;
-            this.pictureBoxArtilleryMount.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // buttonCreate
+            // buttonCreateArtilleryMount
             // 
-            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreate.Location = new System.Drawing.Point(8, 8);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(289, 23);
-            this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать самоходную артиллерейскую установку";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreateArtilleryMount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateArtilleryMount.Location = new System.Drawing.Point(8, 8);
+            this.buttonCreateArtilleryMount.Name = "buttonCreateArtilleryMount";
+            this.buttonCreateArtilleryMount.Size = new System.Drawing.Size(289, 23);
+            this.buttonCreateArtilleryMount.TabIndex = 1;
+            this.buttonCreateArtilleryMount.Text = "Создать самоходную артиллерейскую установку";
+            this.buttonCreateArtilleryMount.UseVisualStyleBackColor = true;
+            this.buttonCreateArtilleryMount.Click += new System.EventHandler(this.buttonCreateArtilleryMount_Click);
             // 
             // buttonUp
             // 
@@ -105,31 +104,31 @@
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.buttonUp_Click);
             // 
-            // button1
+            // buttonCreateArmorCar
             // 
-            this.button1.Location = new System.Drawing.Point(334, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(289, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Создать бронированную машину";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCreateArmorCar.Location = new System.Drawing.Point(334, 8);
+            this.buttonCreateArmorCar.Name = "buttonCreateArmorCar";
+            this.buttonCreateArmorCar.Size = new System.Drawing.Size(289, 23);
+            this.buttonCreateArmorCar.TabIndex = 6;
+            this.buttonCreateArmorCar.Text = "Создать бронированную машину";
+            this.buttonCreateArmorCar.UseVisualStyleBackColor = true;
+            this.buttonCreateArmorCar.Click += new System.EventHandler(this.buttonCreateArmorCar_Click);
             // 
             // FormArtilleryMount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCreateArmorCar);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonCreateArtilleryMount);
             this.Controls.Add(this.pictureBoxArtilleryMount);
             this.Name = "FormArtilleryMount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
 
@@ -138,12 +137,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxArtilleryMount;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateArtilleryMount;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCreateArmorCar;
     }
 }
 
