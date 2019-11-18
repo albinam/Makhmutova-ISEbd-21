@@ -47,5 +47,6 @@ namespace WindowsFormArmorCar
         }
         public abstract void DrawArmorCar(Graphics g);
         public abstract void MoveTransport(Direction direction);
+        public abstract ITransport Clone();
     }
 }

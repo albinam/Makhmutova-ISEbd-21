@@ -33,7 +33,7 @@ namespace WindowsFormArmorCar
             {
                 Bitmap bmp = new Bitmap(pictureBoxArmorCar.Width, pictureBoxArmorCar.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                armor_car.SetPosition(5, 5, pictureBoxArmorCar.Width, pictureBoxArmorCar.Height);
+                armor_car.SetPosition(25, 25, pictureBoxArmorCar.Width, pictureBoxArmorCar.Height);
                 armor_car.DrawArmorCar(gr); pictureBoxArmorCar.Image = bmp;
             }
         }
@@ -58,9 +58,9 @@ namespace WindowsFormArmorCar
         //// <param name="e"></param>         
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
-            (sender as Control).DoDragDrop((sender as Control).BackColor, 
+            (sender as Control).DoDragDrop((sender as Control).BackColor,
                 DragDropEffects.Move | DragDropEffects.Copy);
-        } 
+        }
         /// <summary>        
         /// Проверка получаемой информации (ее типа на соответствие требуемому)        
         /// </summary>         
@@ -98,13 +98,14 @@ namespace WindowsFormArmorCar
         private void labelDopColor_DragDrop(object sender, DragEventArgs e)
         {
             if (armor_car != null)
-            {                 if (armor_car is ArtilleryMount)
-                {                     (armor_car as ArtilleryMount).SetDopColor((Color)e.Data.GetData(typeof(Color)));
+            {
+                if (armor_car is ArtilleryMount)
+                {
+                    (armor_car as ArtilleryMount).SetDopColor((Color)e.Data.GetData(typeof(Color)));
                     DrawArmorCar();
                 }
             }
         }
-
         /// <summary>        
         /// Передаем информацию при нажатии на Label      
         /// </summary>       
@@ -133,7 +134,8 @@ namespace WindowsFormArmorCar
             if (e.Data.GetDataPresent(DataFormats.Text))
             {
                 e.Effect = DragDropEffects.Copy;
-            } else
+            }
+            else
             {
                 e.Effect = DragDropEffects.None;
             }
@@ -151,7 +153,7 @@ namespace WindowsFormArmorCar
                     armor_car = new ArmorCar(100, 500, Color.White);
                     break;
                 case "Самоходная артиллерейская установка":
-                    armor_car = new ArtilleryMount(100, 500, Color.White, Color.Black, 70, true, false);
+                    armor_car = new ArtilleryMount(100, 500, Color.White, Color.Black, 70, true, false, Guns.Three, 0);
                     break;
             }
             DrawArmorCar();
@@ -165,6 +167,53 @@ namespace WindowsFormArmorCar
         {
             eventAddArmorCar?.Invoke(armor_car);
             Close();
-        } 
+        }
+        private void labelSimpleGuns_MouseDown(object sender, MouseEventArgs e)
+        {
+            labelSimpleGuns.DoDragDrop(labelSimpleGuns.Text, DragDropEffects.Move | DragDropEffects.Copy);
+        }
+
+        private void labelGunsWithPattern_MouseDown(object sender, MouseEventArgs e)
+        {
+            labelGunsWithPattern.DoDragDrop(labelGunsWithPattern.Text, DragDropEffects.Move | DragDropEffects.Copy);
+        }
+
+        private void labelGunsWithAngle_MouseDown(object sender, MouseEventArgs e)
+        {
+            labelGunsWithAngle.DoDragDrop(labelGunsWithAngle.Text, DragDropEffects.Move | DragDropEffects.Copy);
+        }
+        private void labelGunsType_DragDrop(object sender, DragEventArgs e)
+        {
+            if (armor_car != null)
+            {
+                if (armor_car is ArtilleryMount)
+                {
+                    switch (e.Data.GetData(DataFormats.Text).ToString())
+                    {
+                        case "Простое орудие":
+                            (armor_car as ArtilleryMount).SetGunType(0);
+                            break;
+                        case "Орудие с рисунком":
+                            (armor_car as ArtilleryMount).SetGunType(1);
+                            break;
+                        case "Орудие под углом":
+                            (armor_car as ArtilleryMount).SetGunType(2);
+                            break;
+                    }
+                    DrawArmorCar();
+                }
+            }
+        }
+        private void labelGunsType_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
     }
 }
