@@ -126,6 +126,5 @@ namespace WindowsFormArmorCar
         {
             Draw();
         }
-
     }
 }

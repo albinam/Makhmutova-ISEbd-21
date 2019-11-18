@@ -38,14 +38,11 @@ namespace WindowsFormArmorCar
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
         {
-
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
-
         }
-
         public override void DrawArmorCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
