@@ -12,12 +12,10 @@ namespace WindowsFormArmorCar
         /// Список с уровнями парковки         
         //// </summary>       
         List<MilitaryBase<ITransport,IGuns>> militaryBaseStages;
-
         /// <summary>        
         /// Сколько мест на каждом уровне    
         /// </summary> 
         private const int countPlaces = 15;
-
         /// <summary>       
         /// Конструктор         
         /// </summary>         

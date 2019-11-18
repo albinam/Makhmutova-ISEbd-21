@@ -13,11 +13,8 @@ namespace WindowsFormArmorCar
         private Dictionary<int, T> places;
         private int sizeOfBase;
         private N[] placesGuns;
-
         private ArrayList removed;
-
         private int PictureWidth { get; set; }
-
         private int PictureHeight { get; set; }
         /// <summary>        
         /// Размер парковочного места (ширина)         
@@ -82,58 +79,9 @@ namespace WindowsFormArmorCar
                 p.removed.Add(car);
                 p.places.Remove(index);
                 return car;
-            }
-           
+            }           
             return null;
         }
-
-        /// <summary>         
-        /// Перегрузка оператора умножения       
-        /// Логика действия: заполняем всю парковку "клонами" 1 автомобиля      
-        /// </summary>         
-        /// <param name="p">Парковка</param>       
-        /// <param name="x">количество мест на парковке</param>         
-        /// <returns></returns> 
-        /*public static int operator *(MilitaryBase<T, N> p, int size)
-        {
-            List<T> clones = new List<T>();
-            if (p.sizeOfBase + 1 < size)
-            {
-                return -1;
-            }
-            for (int i = 0; i < p.sizeOfBase; i++)
-            {
-                if (!p.CheckFreePlace(i))
-                {
-                    clones.Add(p.places[i]);
-                }
-            }
-            foreach (T vehicle in clones)
-            {
-                for (int i = 0; i < size; i++)
-                {
-                    T newVehicle = (T)vehicle.Clone();
-                    int index = p + newVehicle;
-                }
-            }
-            return 1;
-        }
-        /// <summary>         
-        /// Перегрузка оператора деления
-        /// Логика действия: убираем все машины с парковки      
-        /// </summary>         
-        /// <param name="p">Парковка</param>       
-        /// <param name="x">количество мест на парковке</param>         
-        /// <returns></returns> 
-        public static int operator /(MilitaryBase<T, N> p, int x)
-        {
-            for (int i = 0; i < x; i++)
-            {
-                p.places.Remove(i);
-            }
-            return 1;
-        }*/
-
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         

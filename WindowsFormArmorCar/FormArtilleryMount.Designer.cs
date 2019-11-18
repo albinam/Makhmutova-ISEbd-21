@@ -48,7 +48,6 @@
             this.pictureBoxArtilleryMount.Size = new System.Drawing.Size(800, 450);
             this.pictureBoxArtilleryMount.TabIndex = 0;
             this.pictureBoxArtilleryMount.TabStop = false;
-            this.pictureBoxArtilleryMount.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonCreate
             // 
@@ -129,7 +128,7 @@
             this.Controls.Add(this.pictureBoxArtilleryMount);
             this.Name = "FormArtilleryMount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
 

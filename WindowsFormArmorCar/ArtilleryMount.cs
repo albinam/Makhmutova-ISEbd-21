@@ -9,13 +9,11 @@ namespace WindowsFormArmorCar
 {
     class ArtilleryMount : ArmorCar
     {
-
         private int GunType;
         /// <summary>
         /// Дальность стрельбы
         /// </summary>
         public float GunRange { private set; get; }
-
         /// <summary>
         /// маскировка
         /// </summary>
@@ -24,14 +22,11 @@ namespace WindowsFormArmorCar
         /// флаг
         /// </summary>
         public bool Flag { private set; get; }
-
         /// <summary>
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
         public Guns NumberOfGuns { private set; get; }
-
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -42,35 +37,28 @@ namespace WindowsFormArmorCar
         /// <param name="gunRange">дальность стрельбы</param>
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
-
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask, Guns numberOfGuns) : base(maxSpeed, weight, mainColor)
         {
-
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
             NumberOfGuns = numberOfGuns;
             GunType = new Random().Next(0, 3);
-
         }
-
         public override void DrawArmorCar(Graphics g)
         {
             base.DrawArmorCar(g);
-
             Pen pen = new Pen(Color.Black);
             g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
             g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
-
             if (Flag)
             {
                 g.DrawRectangle(pen, _startPosX + 45, _startPosY - 10, 7, 5);
                 Brush br3 = new SolidBrush(Color.White);
                 g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
                 g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
-
             }
             IGuns guns;
             switch (GunType)
@@ -89,9 +77,7 @@ namespace WindowsFormArmorCar
                     guns = new SimpleGuns(_startPosX, _startPosY);
                     break;
             }
-
             guns.GunsDraw(g, NumberOfGuns, DopColor);
-
             if (Mask)
             {
                 Pen pen1 = new Pen(MainColor);

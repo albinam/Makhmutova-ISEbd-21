@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 namespace WindowsFormArmorCar
 {
     public interface IGuns
-    {
-        
+    {  
         void GunsDraw(Graphics g,Guns numberOfGuns, Color color);
-
     }
 }

@@ -116,16 +116,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-       /* private void buttonSetAll_Click(object sender, EventArgs e)
-        {
-            int place = military_base[listBoxLevels.SelectedIndex] * 15;
-            Draw();
-        }
-        private void buttonRemoveAll_Click(object sender, EventArgs e)
-        {
-            int place = military_base[listBoxLevels.SelectedIndex] / 15;
-            Draw();
-        }*/
         /// <summary>         
         /// Метод обработки выбора элемента на listBoxLevels         
         /// </summary>         

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace WindowsFormArmorCar
 {
     public class SimpleGuns:IGuns
-
     {
         public float _startPosX;
         public float _startPosY;
@@ -37,7 +36,6 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 9, _startPosX + 89, _startPosY + 9);
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 15, _startPosX + 89, _startPosY + 15);
-
             }
         }
     }
