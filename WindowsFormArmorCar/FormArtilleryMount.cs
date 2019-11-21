@@ -12,8 +12,7 @@ namespace WindowsFormArmorCar
 {
     public partial class FormArtilleryMount : Form
     {
-        private ArtilleryMount car;
-
+        private ITransport car;
         public FormArtilleryMount()
         {
             InitializeComponent();
@@ -21,9 +20,9 @@ namespace WindowsFormArmorCar
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             car = new ArtilleryMount(100, 300, Color.Green,
-            Color.Black, 20, true, false, Guns.Two);
+           Color.Black, 20, true, false,Guns.Three);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
-            pictureBoxArtilleryMount.Height);
+           pictureBoxArtilleryMount.Height);
             Draw();
         }
         private void Draw()
@@ -33,7 +32,6 @@ namespace WindowsFormArmorCar
             car.DrawArmorCar(gr);
             pictureBoxArtilleryMount.Image = bmp;
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
@@ -52,6 +50,13 @@ namespace WindowsFormArmorCar
                     car.MoveTransport(Direction.Right);
                     break;
             }
+            Draw();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            car = new ArmorCar(100, 300, Color.Green);
+            car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
+           pictureBoxArtilleryMount.Height);
             Draw();
         }
     }
