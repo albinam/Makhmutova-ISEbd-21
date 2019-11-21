@@ -50,6 +50,7 @@ namespace WindowsFormArmorCar
             {
                 return -1;
             }
+
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
@@ -119,5 +120,25 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
         }
+        public T this[int ind]
+        {
+            get
+            {
+                if (places.ContainsKey(ind))
+                {
+                    return places[ind];
+                }
+                return null;
+            }
+            set
+            {
+                if (CheckFreePlace(ind))
+                {
+                    places.Add(ind, value);
+                    places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+            }
+        }
     }
 }
+

@@ -29,6 +29,16 @@ namespace WindowsFormArmorCar
             Weight = weight;
             MainColor = mainColor;
         }
+        public ArmorCar(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
@@ -94,6 +104,10 @@ namespace WindowsFormArmorCar
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 29));
             Pen pen2 = new Pen(Color.Red);
             g.DrawPolygon(pen2, star.ToArray<Point>());
+        }
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }

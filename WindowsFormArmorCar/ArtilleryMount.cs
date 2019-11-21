@@ -12,7 +12,7 @@ namespace WindowsFormArmorCar
         /// <summary>
         /// Дальность стрельбы
         /// </summary>
-        public float GunRange { private set; get; }
+        public double GunRange { private set; get; }
         /// <summary>
         /// маскировка
         /// </summary>
@@ -36,12 +36,25 @@ namespace WindowsFormArmorCar
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
-      float gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
+       double gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
+        }
+        public ArtilleryMount(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 7)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                GunRange =Convert.ToDouble(strs[4]);
+                Flag = Convert.ToBoolean(strs[5]);
+                Mask = Convert.ToBoolean(strs[6]); }
         }
         public override void DrawArmorCar(Graphics g)
         {
@@ -79,6 +92,10 @@ namespace WindowsFormArmorCar
         public void SetDopColor(Color color)
         {
             DopColor = color;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + GunRange + ";" +Flag + ";" +Mask;
         }
     }
 }

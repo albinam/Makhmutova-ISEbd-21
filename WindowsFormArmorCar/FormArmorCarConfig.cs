@@ -13,7 +13,9 @@ namespace WindowsFormArmorCar
     public partial class FormArmorCarConfig : Form
     {
         ITransport armor_car = null;
+
         private event armor_carDelegate eventAddArmorCar;
+
         public FormArmorCarConfig()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace WindowsFormArmorCar
             (sender as Control).DoDragDrop((sender as Control).BackColor, 
                 DragDropEffects.Move | DragDropEffects.Copy);
         } 
+
         /// <summary>        
         /// Проверка получаемой информации (ее типа на соответствие требуемому)        
         /// </summary>         
@@ -104,7 +107,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-
         /// <summary>        
         /// Передаем информацию при нажатии на Label      
         /// </summary>       
@@ -165,6 +167,6 @@ namespace WindowsFormArmorCar
         {
             eventAddArmorCar?.Invoke(armor_car);
             Close();
-        } 
+        }        
     }
 }
