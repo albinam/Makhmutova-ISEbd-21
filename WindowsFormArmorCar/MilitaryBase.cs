@@ -139,6 +139,10 @@ namespace WindowsFormArmorCar
                 }
             }
         }
+        public void Clear()
+        {
+            places.Clear();
+        }
     }
 }
 

@@ -20,7 +20,7 @@ namespace WindowsFormArmorCar
         private void buttonSetArtilleryMount_Click(object sender, EventArgs e)
         {
             car = new ArtilleryMount(100, 300, Color.Green,
-           Color.Black, 20, true, true);
+           Color.Black, 20, true, false,Guns.Three);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
            pictureBoxArtilleryMount.Height);
             Draw();
@@ -32,7 +32,6 @@ namespace WindowsFormArmorCar
             car.DrawArmorCar(gr);
             pictureBoxArtilleryMount.Image = bmp;
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;

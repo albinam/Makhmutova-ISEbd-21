@@ -136,6 +136,83 @@ namespace WindowsFormArmorCar
                 return true;
             }
         }
+        public bool SaveLevel(int levelIndex, string filename)
+        {
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+            if (levelIndex < 0 || levelIndex >= militaryBaseStages.Count)
+            {
+                return false;
+            }
+            if (militaryBaseStages[levelIndex] == null)
+            {
+                return false;
+            }
+            var level = militaryBaseStages[levelIndex];
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                for (int i = 0; i < countPlaces; i++)
+                {
+                    var armor_car = level[i];
+                    if (armor_car != null)
+                    {
+                        if (armor_car.GetType().Name == "ArmorCar")
+                        {
+                            sw.WriteLine(i + ":ArmorCar:" + armor_car);
+                        }
+                        if (armor_car.GetType().Name == "ArtilleryMount")
+                        {
+                            sw.WriteLine(i + ":ArtilleryMount:" + armor_car);
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        public bool LoadLevel(int levelIndex, string filename)
+        {
+            if (levelIndex < 0 || levelIndex >= militaryBaseStages.Count)
+            {
+                return false;
+            }
+            if (!File.Exists(filename) || militaryBaseStages[levelIndex] == null)
+            {
+                return false;
+            }
+            militaryBaseStages[levelIndex].Clear();
+            ITransport armor_car = null;
+            using (StreamReader sr = new StreamReader(filename))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    string[] splitLine = line.Split(':');
+                    if (splitLine.Length > 2)
+                    {
+                        if (splitLine[1] == "ArmorCar")
+                        {
+                            armor_car = new ArmorCar(splitLine[2]);
+                        }
+                        else
+                        {
+                            armor_car = new ArtilleryMount(splitLine[2]);
+                        }
+                        if (armor_car != null)
+                        {
+                            militaryBaseStages[levelIndex][Convert.ToInt32(splitLine[0])] = armor_car;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
     }
 }
+
 
