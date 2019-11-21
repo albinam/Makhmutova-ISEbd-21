@@ -52,12 +52,12 @@
             // buttonCreate
             // 
             this.buttonCreate.Location = new System.Drawing.Point(8, 8);
-            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Name = "buttonSetArtilleryMount";
             this.buttonCreate.Size = new System.Drawing.Size(289, 23);
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Создать самоходную артиллерейскую установку";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonUp
             // 

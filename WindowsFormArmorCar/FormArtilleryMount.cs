@@ -17,7 +17,7 @@ namespace WindowsFormArmorCar
         {
             InitializeComponent();
         }
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonSetArtilleryMount_Click(object sender, EventArgs e)
         {
             car = new ArtilleryMount(100, 300, Color.Green,
            Color.Black, 20, true, true);
