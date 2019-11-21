@@ -53,12 +53,12 @@
             // 
             this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCreate.Location = new System.Drawing.Point(8, 8);
-            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Name = "buttonSetArtilleryMount";
             this.buttonCreate.Size = new System.Drawing.Size(289, 23);
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Создать самоходную артиллерейскую установку";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonUp
             // 
@@ -107,12 +107,12 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(334, 8);
-            this.button1.Name = "button1";
+            this.button1.Name = "buttonSetArmorCar";
             this.button1.Size = new System.Drawing.Size(289, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Создать бронированную машину";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonSetArmorCar_Click);
             // 
             // FormArtilleryMount
             // 
