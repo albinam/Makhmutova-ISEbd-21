@@ -44,6 +44,7 @@
             // 
             // buttonSetArmorCar
             // 
+
             this.buttonSetArmorCar.Location = new System.Drawing.Point(659, 142);
             this.buttonSetArmorCar.Name = "buttonSetArmorCar";
             this.buttonSetArmorCar.Size = new System.Drawing.Size(123, 47);

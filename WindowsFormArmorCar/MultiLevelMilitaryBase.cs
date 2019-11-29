@@ -30,7 +30,6 @@ namespace WindowsFormArmorCar
                 militaryBaseStages.Add(new MilitaryBase<ITransport,IGuns>(countPlaces, pictureWidth, pictureHeight));
             }
         } 
-
         /// <summary>        
         /// Индексатор         
         /// </summary>       
@@ -43,17 +42,6 @@ namespace WindowsFormArmorCar
                 if (ind > -1 && ind < militaryBaseStages.Count)
                 {
                     return militaryBaseStages[ind];
-                }
-                return null;
-            }
-        }
-        public ITransport this[int level, int key]
-        {
-            get
-            {
-                if (level > -1 && level < militaryBaseStages.Count)
-                {
-                    return militaryBaseStages[level].GetTransportByKey(key);
                 }
                 return null;
             }
