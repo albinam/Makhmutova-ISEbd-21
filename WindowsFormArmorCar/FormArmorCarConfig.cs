@@ -13,9 +13,7 @@ namespace WindowsFormArmorCar
     public partial class FormArmorCarConfig : Form
     {
         ITransport armor_car = null;
-
         private event armor_carDelegate eventAddArmorCar;
-
         public FormArmorCarConfig()
         {
             InitializeComponent();
