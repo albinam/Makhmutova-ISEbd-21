@@ -1,6 +1,5 @@
 ﻿namespace WindowsFormArmorCar
 {
-
     public enum Direction
     {
         Up,
