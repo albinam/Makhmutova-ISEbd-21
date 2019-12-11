@@ -32,7 +32,6 @@ namespace WindowsFormArmorCar
             car.DrawArmorCar(gr);
             pictureBoxArtilleryMount.Image = bmp;
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
