@@ -91,7 +91,6 @@ namespace WindowsFormArmorCar
         {
             return !places.ContainsKey(index);
         }
-
           public T GetTransportByKey(int key)
         {
             return places.ContainsKey(key) ? places[key] : null;
