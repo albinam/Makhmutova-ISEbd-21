@@ -25,6 +25,5 @@ namespace WindowsFormArmorCar
         /// </summary>        
         /// <param name="g"></param>        
         void DrawArmorCar(Graphics g);
-        ITransport Clone();
     }
 }
