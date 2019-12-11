@@ -214,5 +214,3 @@ namespace WindowsFormArmorCar
         }
     }
 }
-
-
