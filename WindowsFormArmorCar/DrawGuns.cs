@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 namespace WindowsFormArmorCar
 {
     public class DrawGuns
-
     {
         public Guns guns { private get; set; }
-
         private float x;
         private float y;
         public DrawGuns(Guns numberOfGuns, float _startPosX, float _startPosY)
@@ -44,8 +42,5 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen, x + 69, y + 15, x + 89, y + 15);
             }
         }
-
     }
-
-
 }
