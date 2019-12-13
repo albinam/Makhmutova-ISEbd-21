@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace WindowsFormArmorCar
 {
-    public class MilitaryBase<T> where T : class, ITransport
+    public class MilitaryBase<T, N> where T : class, ITransport where N : class, IGuns
     {
         private Dictionary<int, T> places;
-        /// <summary>         
-        /// Максимальное количество мест на парковке         
-        /// </summary>        
-        private int _maxCount; 
+        private int sizeOfBase;
+        private N[] placesGuns;
+        private ArrayList removed;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         /// <summary>        
@@ -32,10 +32,12 @@ namespace WindowsFormArmorCar
         /// /// <param name="pictureHeight">Рамзер парковки - высота</param>         
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
-            _maxCount = sizes;
+            sizeOfBase= sizes;
             places = new Dictionary<int, T>();
+            placesGuns = new N[sizes];
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
+            removed=new ArrayList();
         }
         /// <summary>         
         /// Перегрузка оператора сложения         
@@ -44,41 +46,38 @@ namespace WindowsFormArmorCar
         /// <param name="p">Парковка</param>      
         /// <param name=" artilleryMount">Добавляемый автомобиль</param>      
         /// <returns></returns>     
-        public static int operator +(MilitaryBase<T> p, T artilleryMount)
+        public static int operator +(MilitaryBase<T, N> p, T artilleryMount)
         {
-            if (p.places.Count == p._maxCount)
-            {
-                throw new ParkingOverflowException();
-            }
-            for (int i = 0; i < p._maxCount; i++)
+            for (int i = 0; i < p.sizeOfBase; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p.places.Add(i, artilleryMount);
-                    p.places[i].SetPosition(5 + i / 5 * _placeSizeWidth + 5, i % 5 * _placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
+                    p.places.Add(i,artilleryMount);
+                    p.places[i].SetPosition(5 + i / 5 * _placeSizeWidth + 5,
+                        i % 5 * _placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
             }
             return -1;
         }
-    /// <summary>         
-    /// Перегрузка оператора вычитания       
-    /// Логика действия: с парковки забираем автомобиль      
-    /// </summary>         
-    /// <param name="p">Парковка</param>       
-    /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
-    /// <returns></returns> 
-    public static T operator -(MilitaryBase<T> p, int index)
+        /// <summary>         
+        /// Перегрузка оператора вычитания       
+        /// Логика действия: с парковки забираем автомобиль      
+        /// </summary>         
+        /// <param name="p">Парковка</param>       
+        /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
+        /// <returns></returns> 
+        public static T operator -(MilitaryBase<T, N> p, int index)
         {
-           if (!p.CheckFreePlace(index))
+            if (!p.CheckFreePlace(index))
             {
                 T car = p.places[index];
+                p.removed.Add(car);
                 p.places.Remove(index);
                 return car;
             }
             throw new ParkingNotFoundException(index);
-        }      
-        /// <summary>         
+        }
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
         /// <param name="index">Номер парковочного места (порядковый номер в массиве)</param>         
@@ -87,6 +86,10 @@ namespace WindowsFormArmorCar
         {
             return !places.ContainsKey(index);
         }
+        public T GetTransportByKey(int key)
+        {
+            return places.ContainsKey(key) ? places[key] : null;
+        }
         /// <summary>         
         /// Метод отрисовки парковки        
         /// </summary>         
@@ -94,21 +97,23 @@ namespace WindowsFormArmorCar
         public void Draw(Graphics g)
         {
             DrawMilitaryBase(g);
-            var keys = places.Keys.ToList();
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < sizeOfBase; i++)
             {
-                places[keys[i]].DrawArmorCar(g);
+                if (!CheckFreePlace(i))
+                {//если место не пустое                     
+                    places[i].DrawArmorCar(g);
+                }
             }
         }
         /// <summary>         
-        /// /// Метод отрисовки разметки парковочных мест      
-        /// /// </summary>       
-        /// /// <param name="g"></param>        
+        /// Метод отрисовки разметки парковочных мест      
+        /// </summary>       
+        /// <param name="g"></param>        
         private void DrawMilitaryBase(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);             //границы праковки             
-            g.DrawRectangle(pen, 0, 0, (_maxCount / 5) * _placeSizeWidth, 400);
-            for (int i = 0; i < _maxCount / 4; i++)
+            g.DrawRectangle(pen, 0, 0, (sizeOfBase / 5) * _placeSizeWidth, 400);
+            for (int i = 0; i <sizeOfBase/ 4; i++)
             {
                 //отрисовываем, по 5 мест на линии                 
                 for (int j = 0; j < 5; ++j)
@@ -127,7 +132,7 @@ namespace WindowsFormArmorCar
                 {
                     return places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -141,6 +146,10 @@ namespace WindowsFormArmorCar
                     throw new ParkingOccupiedPlaceException(ind);
                 }
             }
+        }
+        public void Clear()
+        {
+            places.Clear();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace WindowsFormArmorCar
         /// <summary>        
         /// Список с уровнями парковки         
         //// </summary>       
-        List<MilitaryBase<ITransport>> militaryBaseStages;
+        List<MilitaryBase<ITransport,IGuns>> militaryBaseStages;
         /// <summary>        
         /// Сколько мест на каждом уровне    
         /// </summary> 
@@ -27,10 +27,10 @@ namespace WindowsFormArmorCar
         /// <param name="pictureHeight"></param>        
         public MultiLevelMilitaryBase(int countStages, int pictureWidth, int pictureHeight)
         {
-            militaryBaseStages = new List<MilitaryBase<ITransport>>();
+            militaryBaseStages = new List<MilitaryBase<ITransport,IGuns>>();
             for (int i = 0; i < countStages; ++i)
             {
-                militaryBaseStages.Add(new MilitaryBase<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                militaryBaseStages.Add(new MilitaryBase<ITransport,IGuns>(countPlaces, pictureWidth, pictureHeight));
             }
         }
         /// <summary>        
@@ -38,7 +38,7 @@ namespace WindowsFormArmorCar
         /// </summary>       
         /// <param name="ind"></param>        
         /// <returns></returns>        
-        public MilitaryBase<ITransport> this[int ind]
+        public MilitaryBase<ITransport,IGuns> this[int ind]
         {
             get
             {
@@ -104,7 +104,7 @@ namespace WindowsFormArmorCar
                     {
                         militaryBaseStages.Clear();
                     }
-                    militaryBaseStages = new List<MilitaryBase<ITransport>>(count);
+                    militaryBaseStages = new List<MilitaryBase<ITransport,IGuns>>(count);
                 }
                 else
                 {
@@ -115,7 +115,7 @@ namespace WindowsFormArmorCar
                     if (line == "Level")
                     {
                         counter++;
-                        militaryBaseStages.Add(new MilitaryBase<ITransport>(countPlaces,
+                        militaryBaseStages.Add(new MilitaryBase<ITransport,IGuns>(countPlaces,
         pictureWidth, pictureHeight));
                         continue;
                     }
@@ -140,6 +140,81 @@ namespace WindowsFormArmorCar
                 return true;
             }
         }
+        public bool SaveLevel(int levelIndex, string filename)
+        {
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+            if (levelIndex < 0 || levelIndex >= militaryBaseStages.Count)
+            {
+                return false;
+            }
+            if (militaryBaseStages[levelIndex] == null)
+            {
+                return false;
+            }
+            var level = militaryBaseStages[levelIndex];
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                for (int i = 0; i < countPlaces; i++)
+                {
+                    var armor_car = level[i];
+                    if (armor_car != null)
+                    {
+                        if (armor_car.GetType().Name == "ArmorCar")
+                        {
+                            sw.WriteLine(i + ":ArmorCar:" + armor_car);
+                        }
+                        if (armor_car.GetType().Name == "ArtilleryMount")
+                        {
+                            sw.WriteLine(i + ":ArtilleryMount:" + armor_car);
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        public bool LoadLevel(int levelIndex, string filename)
+        {
+            if (levelIndex < 0 || levelIndex >= militaryBaseStages.Count)
+            {
+                return false;
+            }
+            if (!File.Exists(filename) || militaryBaseStages[levelIndex] == null)
+            {
+                throw new FileNotFoundException();
+            }
+            militaryBaseStages[levelIndex].Clear();
+            ITransport armor_car = null;
+            using (StreamReader sr = new StreamReader(filename))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    string[] splitLine = line.Split(':');
+                    if (splitLine.Length > 2)
+                    {
+                        if (splitLine[1] == "ArmorCar")
+                        {
+                            armor_car = new ArmorCar(splitLine[2]);
+                        }
+                        else
+                        {
+                            armor_car = new ArtilleryMount(splitLine[2]);
+                        }
+                        if (armor_car != null)
+                        {
+                            militaryBaseStages[levelIndex][Convert.ToInt32(splitLine[0])] = armor_car;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
     }
 }
-

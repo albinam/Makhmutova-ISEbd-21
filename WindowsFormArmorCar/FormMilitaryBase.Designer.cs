@@ -43,6 +43,8 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.сохранитьУровеньToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьУровеньToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -141,7 +143,9 @@
             // 
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьToolStripMenuItem,
-            this.загрузитьToolStripMenuItem});
+            this.загрузитьToolStripMenuItem,
+            this.сохранитьУровеньToolStripMenuItem,
+            this.загрузитьУровеньToolStripMenuItem});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(48, 20);
             this.toolStripMenuItemFile.Text = "Файл";
@@ -168,6 +172,20 @@
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
+            // 
+            // сохранитьУровеньToolStripMenuItem
+            // 
+            this.сохранитьУровеньToolStripMenuItem.Name = "сохранитьУровеньToolStripMenuItem";
+            this.сохранитьУровеньToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.сохранитьУровеньToolStripMenuItem.Text = "Сохранить уровень";
+            this.сохранитьУровеньToolStripMenuItem.Click += new System.EventHandler(this.сохранитьУровеньToolStripMenuItem_Click);
+            // 
+            // загрузитьУровеньToolStripMenuItem
+            // 
+            this.загрузитьУровеньToolStripMenuItem.Name = "загрузитьУровеньToolStripMenuItem";
+            this.загрузитьУровеньToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.загрузитьУровеньToolStripMenuItem.Text = "Загрузить уровень";
+            this.загрузитьУровеньToolStripMenuItem.Click += new System.EventHandler(this.загрузитьУровеньToolStripMenuItem_Click);
             // 
             // FormMilitaryBase
             // 
@@ -212,5 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьУровеньToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьУровеньToolStripMenuItem;
     }
 }

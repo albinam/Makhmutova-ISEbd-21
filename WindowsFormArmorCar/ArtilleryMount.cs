@@ -25,6 +25,11 @@ namespace WindowsFormArmorCar
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
+        private int GunsType;
+        public Guns NumberOfGuns { private set; get; }
+        string num;
+        /// <param name="numberOfGuns">количество орудий</param>
+        /// <param name="gunsType">тип орудия</param>
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -36,25 +41,48 @@ namespace WindowsFormArmorCar
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
-       double gunRange, bool flag, bool mask) : base(maxSpeed, weight, mainColor)
+       double gunRange, bool flag, bool mask, Guns numberOfGuns, int gunsType) : base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             GunRange = gunRange;
             Flag = flag;
             Mask = mask;
+            NumberOfGuns = numberOfGuns;
+            GunsType = gunsType;
         }
         public ArtilleryMount(string info) : base(info)
         {
             string[] strs = info.Split(';');
-            if (strs.Length == 7)
+            if (strs.Length == 9)
             {
                 MaxSpeed = Convert.ToInt32(strs[0]);
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
                 DopColor = Color.FromName(strs[3]);
-                GunRange =Convert.ToDouble(strs[4]);
+                GunRange = Convert.ToDouble(strs[4]);
                 Flag = Convert.ToBoolean(strs[5]);
-                Mask = Convert.ToBoolean(strs[6]); }
+                Mask = Convert.ToBoolean(strs[6]);
+                num = Convert.ToString(strs[7]);
+                switch (num)
+                {
+                    case "One":
+                        {
+                            NumberOfGuns = Guns.One;
+                            break;
+                        }
+                    case "Two":
+                        {
+                            NumberOfGuns = Guns.Two;
+                            break;
+                        }
+                    case "Three":
+                        {
+                            NumberOfGuns = Guns.Three;
+                            break;
+                        }
+                }
+                GunsType = Convert.ToInt32(strs[8]);
+            }
         }
         public override void DrawArmorCar(Graphics g)
         {
@@ -63,7 +91,6 @@ namespace WindowsFormArmorCar
             Brush br1 = new SolidBrush(DopColor);
             g.FillRectangle(br1, _startPosX + 22, _startPosY + 5, 47, 15);
             g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
-            g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
             if (Flag)
             {
                 g.DrawRectangle(pen, _startPosX + 45, _startPosY - 10, 7, 5);
@@ -85,6 +112,23 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
                 g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
             }
+            IGuns guns;
+            switch (GunsType)
+            {
+                case 0:
+                    guns = new SimpleGuns(_startPosX, _startPosY);
+                    break;
+                case 1:
+                    guns = new GunsWithPattern(_startPosX, _startPosY);
+                    break;
+                case 2:
+                    guns = new GunsWithAngle(_startPosX, _startPosY);
+                    break;
+                default:
+                    guns = new SimpleGuns(_startPosX, _startPosY);
+                    break;
+            }
+            guns.GunsDraw(g, NumberOfGuns, DopColor);
         }
         /// Смена дополнительного цвета        
         /// </summary>        
@@ -95,7 +139,11 @@ namespace WindowsFormArmorCar
         }
         public override string ToString()
         {
-            return base.ToString() + ";" + DopColor.Name + ";" + GunRange + ";" +Flag + ";" +Mask;
+            return base.ToString() + ";" + DopColor.Name + ";" + GunRange + ";" + Flag + ";" + Mask + ";" + NumberOfGuns + ";" + GunsType;
+        }
+        public void SetGunType(int type)
+        {
+            GunsType = type;
         }
     }
 }

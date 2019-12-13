@@ -137,12 +137,13 @@ namespace WindowsFormArmorCar
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                try { 
+                try
+                {
                     military_base.SaveData(saveFileDialog.FileName);
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Сохранено в файл " + saveFileDialog.FileName);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Неизвестная ошибка при сохранении");
@@ -169,6 +170,56 @@ namespace WindowsFormArmorCar
                     logger.Error("Неизвестная ошибка при сохранении");
                 }
             Draw();
+        }
+
+        private void сохранитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    if (military_base.SaveLevel(listBoxLevels.SelectedIndex, saveFileDialog.FileName))
+                    {
+                        MessageBox.Show("Сохранение прошло успешно", "Результат",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        logger.Info("Сохранено в файл " + saveFileDialog.FileName);
+                    }
+                }
+                catch (ParkingOccupiedPlaceException ex)
+                {
+                    MessageBox.Show("Не сохранилось", "Результат",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка при сохранении");
+
+                }
+            }
+        }
+        private void загрузитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    if (military_base.LoadLevel(listBoxLevels.SelectedIndex, openFileDialog.FileName))
+                    {
+                        MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
+        MessageBoxIcon.Information);
+                        logger.Info("Загружено из файла " + openFileDialog.FileName);
+                    }
+                }
+                catch (ParkingOccupiedPlaceException ex)
+                {
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Занятое место");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка при сохранении");
+                }
+                Draw();
+            }
         }
     }
 }
