@@ -48,9 +48,8 @@ namespace WindowsFormArmorCar
         {
             if (p.places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
-
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
@@ -77,7 +76,7 @@ namespace WindowsFormArmorCar
                 p.places.Remove(index);
                 return car;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }      
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
@@ -136,6 +135,10 @@ namespace WindowsFormArmorCar
                 {
                     places.Add(ind, value);
                     places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }

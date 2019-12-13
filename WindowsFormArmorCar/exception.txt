@@ -1,0 +1,11 @@
+2019-12-13 14:15:00.3969|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:15:56.5262|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:17:49.0321|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:20:36.2303|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:20:40.5702|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:22:33.2778|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+Не найдено
+Не найдено13-12-2019
+Не найдено
+Не найдено 13-12-2019
+Переполнение 13-12-2019

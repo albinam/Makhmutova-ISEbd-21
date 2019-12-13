@@ -63,18 +63,22 @@ namespace WindowsFormArmorCar
                     sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var armor_car = level[i];
-                        if (armor_car != null)
+                        try
                         {
-                            if (armor_car.GetType().Name == "ArmorCar")
+                            var armor_car = level[i];
+                            if (armor_car != null)
                             {
-                                sw.WriteLine(i + ":ArmorCar:" + armor_car);
-                            }
-                            if (armor_car.GetType().Name == "ArtilleryMount")
-                            {
-                                sw.WriteLine(i + ":ArtilleryMount:"+armor_car);
+                                if (armor_car.GetType().Name == "ArmorCar")
+                                {
+                                    sw.WriteLine(i + ":ArmorCar:" + armor_car);
+                                }
+                                if (armor_car.GetType().Name == "ArtilleryMount")
+                                {
+                                    sw.WriteLine(i + ":ArtilleryMount:" + armor_car);
+                                }
                             }
                         }
+                        finally { }
                     }
                 }
             }
@@ -84,7 +88,7 @@ namespace WindowsFormArmorCar
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             int counter = -1;
             ITransport armor_car = null;
@@ -104,7 +108,7 @@ namespace WindowsFormArmorCar
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
                 while ((line = sr.ReadLine()) != null)
                 {

@@ -1,0 +1,32 @@
+2019-12-13 14:14:24.0138|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 1
+2019-12-13 14:14:26.3312|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 2
+2019-12-13 14:14:28.4375|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 3
+2019-12-13 14:14:30.1420|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 4
+2019-12-13 14:14:32.2165|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 5
+2019-12-13 14:14:34.2175|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 6
+2019-12-13 14:14:36.3505|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 7
+2019-12-13 14:14:38.1990|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 8
+2019-12-13 14:14:39.8868|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 9
+2019-12-13 14:14:41.4950|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 10
+2019-12-13 14:14:43.2562|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 11
+2019-12-13 14:14:45.4864|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 12
+2019-12-13 14:14:47.2700|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 13
+2019-12-13 14:14:49.2691|INFO|WindowsFormArmorCar.FormMilitaryBase|Добавлен автомобиль 100;500;White;Black;70;True;False на место 14
+2019-12-13 14:14:55.1998|INFO|WindowsFormArmorCar.FormMilitaryBase|Сохранено в файл C:\Users\Альбина\Desktop\1.txt
+2019-12-13 14:15:00.3969|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:15:56.5262|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:16:05.0386|INFO|WindowsFormArmorCar.FormMilitaryBase|Сохранено в файл C:\Users\Альбина\Desktop\2.txt
+2019-12-13 14:16:26.5374|INFO|WindowsFormArmorCar.FormMilitaryBase|Сохранено в файл C:\Users\Альбина\Desktop\2.txt
+2019-12-13 14:17:49.0321|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:20:11.3371|INFO|WindowsFormArmorCar.FormMilitaryBase|Загружено из файла C:\Users\Альбина\Desktop\1.txt
+2019-12-13 14:20:36.2303|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:20:40.5702|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:22:30.1549|INFO|WindowsFormArmorCar.FormMilitaryBase|Загружено из файла C:\Users\Альбина\Desktop\1.txt
+2019-12-13 14:22:33.2778|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
+2019-12-13 14:38:42.6629|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:41:13.5835|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:42:04.3142|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:42:45.6499|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:44:52.7300|ERROR|WindowsFormArmorCar.FormMilitaryBase|Не найдено
+2019-12-13 14:53:15.3428|INFO|WindowsFormArmorCar.FormMilitaryBase|Загружено из файла C:\Users\Альбина\Desktop\1.txt
+2019-12-13 14:53:32.5921|ERROR|WindowsFormArmorCar.FormMilitaryBase|Переполнение
