@@ -35,7 +35,7 @@
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSetArmorCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +104,7 @@
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.buttonUp_Click);
             // 
-            // button1
+            // buttonSetArmorCar
             // 
             this.button1.Location = new System.Drawing.Point(334, 8);
             this.button1.Name = "buttonSetArmorCar";
@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSetArmorCar);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonDown);
@@ -131,7 +131,6 @@
             this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -142,7 +141,7 @@
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSetArmorCar;
     }
 }
 
