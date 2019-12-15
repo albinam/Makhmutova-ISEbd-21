@@ -130,7 +130,6 @@
             this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
