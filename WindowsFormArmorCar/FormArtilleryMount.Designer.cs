@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormArtilleryMount));
             this.pictureBoxArtilleryMount = new System.Windows.Forms.PictureBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonSetArtilleryMount = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
@@ -49,15 +49,15 @@
             this.pictureBoxArtilleryMount.TabIndex = 0;
             this.pictureBoxArtilleryMount.TabStop = false;
             // 
-            // buttonCreate
+            // buttonSetArtilleryMount
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(8, 8);
-            this.buttonCreate.Name = "buttonSetArtilleryMount";
-            this.buttonCreate.Size = new System.Drawing.Size(289, 23);
-            this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать самоходную артиллерейскую установку";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
+            this.buttonSetArtilleryMount.Location = new System.Drawing.Point(8, 8);
+            this.buttonSetArtilleryMount.Name = "buttonSetArtilleryMount";
+            this.buttonSetArtilleryMount.Size = new System.Drawing.Size(289, 23);
+            this.buttonSetArtilleryMount.TabIndex = 1;
+            this.buttonSetArtilleryMount.Text = "Создать самоходную артиллерейскую установку";
+            this.buttonSetArtilleryMount.UseVisualStyleBackColor = true;
+            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonUp
             // 
@@ -123,19 +123,20 @@
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonSetArtilleryMount);
             this.Controls.Add(this.pictureBoxArtilleryMount);
             this.Name = "FormArtilleryMount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormArtilleryMount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtilleryMount)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxArtilleryMount;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonSetArtilleryMount;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
