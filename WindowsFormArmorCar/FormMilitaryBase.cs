@@ -126,6 +126,11 @@ namespace WindowsFormArmorCar
                     logger.Error("Переполнение");
 
                 }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Дублирование");
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,5 +175,16 @@ namespace WindowsFormArmorCar
                 }
             Draw();
         }
+        /// <summary>        
+        /// Обработка нажатия кнопки "Сортировка"       
+        /// </summary>         
+        /// <param name="sender"></param>       
+        /// <param name="e"></param>        
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            military_base.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }   
     }
 }

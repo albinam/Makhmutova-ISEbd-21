@@ -49,7 +49,11 @@ namespace WindowsFormArmorCar
                 return null;
             }
         }
-        public bool SaveData(string filename)
+        /// <summary>       
+        /// Сохранение информации по автомобилям на парковках в файл       
+        /// </summary>       
+        /// <param name="filename">Путь и имя файла</param>   
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -61,29 +65,24 @@ namespace WindowsFormArmorCar
                 foreach (var level in militaryBaseStages)
                 {
                     sw.WriteLine("Level");
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (ITransport armor_car in level)
                     {
-                        try
+                        if (armor_car.GetType().Name == "ArmorCar")
                         {
-                            var armor_car = level[i];
-                            if (armor_car != null)
-                            {
-                                if (armor_car.GetType().Name == "ArmorCar")
-                                {
-                                    sw.WriteLine(i + ":ArmorCar:" + armor_car);
-                                }
-                                if (armor_car.GetType().Name == "ArtilleryMount")
-                                {
-                                    sw.WriteLine(i + ":ArtilleryMount:" + armor_car);
-                                }
-                            }
+                            sw.WriteLine(level.GetKey + ":ArmorCar:"+armor_car);
                         }
-                        finally { }
+                        if (armor_car.GetType().Name == "ArtilleryMount")
+                        {
+                            sw.WriteLine(level.GetKey + ":ArtilleryMount:"+armor_car);
+                        }
                     }
                 }
             }
-            return true;
         }
+        /// <summary>        
+        /// Загрузка нформации по автомобилям на парковках из файла     
+        /// </summary>         
+        /// <param name="filename"></param> 
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
@@ -140,6 +139,12 @@ namespace WindowsFormArmorCar
                 return true;
             }
         }
+        /// <summary>         
+        /// Сортировка уровней      
+        /// </summary>        
+        public void Sort()
+        {
+            militaryBaseStages.Sort();
+        }
     }
 }
-

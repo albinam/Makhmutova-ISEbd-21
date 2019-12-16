@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormArmorCar
 {
-    class ArtilleryMount : ArmorCar
+    class ArtilleryMount : ArmorCar, IComparable<ArtilleryMount>, IEquatable<ArtilleryMount>
     {
         /// <summary>
         /// Дальность стрельбы
@@ -52,9 +52,10 @@ namespace WindowsFormArmorCar
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
                 DopColor = Color.FromName(strs[3]);
-                GunRange =Convert.ToDouble(strs[4]);
+                GunRange = Convert.ToDouble(strs[4]);
                 Flag = Convert.ToBoolean(strs[5]);
-                Mask = Convert.ToBoolean(strs[6]); }
+                Mask = Convert.ToBoolean(strs[6]);
+            }
         }
         public override void DrawArmorCar(Graphics g)
         {
@@ -95,7 +96,80 @@ namespace WindowsFormArmorCar
         }
         public override string ToString()
         {
-            return base.ToString() + ";" + DopColor.Name + ";" + GunRange + ";" +Flag + ";" +Mask;
+            return base.ToString() + ";" + DopColor.Name + ";" + GunRange + ";" + Flag + ";" + Mask;
+        }
+        public int CompareTo(ArtilleryMount other)
+        {
+            var res = (this is ArmorCar).CompareTo(other is ArmorCar);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (GunRange != other.GunRange)
+            {
+                return GunRange.CompareTo(other.GunRange);
+            }
+            if (Flag != other.Flag)
+            {
+                return Flag.CompareTo(other.Flag);
+            }
+            if (Mask != other.Mask)
+            {
+                return Mask.CompareTo(other.Mask);
+            }
+            return 0;
+        }
+        public bool Equals(ArtilleryMount other)
+        {
+            var res = (this as ArmorCar).Equals(other as ArmorCar);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (GunRange != other.GunRange)
+            {
+                return false;
+            }
+            if (Flag != other.Flag)
+            {
+                return false;
+            }
+            if (Mask != other.Mask)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is ArtilleryMount carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
