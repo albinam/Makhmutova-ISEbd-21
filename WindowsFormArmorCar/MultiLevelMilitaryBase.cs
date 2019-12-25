@@ -46,5 +46,16 @@ namespace WindowsFormArmorCar
                 return null;
             }
         }
+        public ITransport this[int level, int key]
+        {
+            get
+            {
+                if (level > -1 && level < militaryBaseStages.Count)
+                {
+                    return militaryBaseStages[level].GetTransportByKey(key);
+                }
+                return null;
+            }
+        }
     } 
 }

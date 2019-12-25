@@ -81,7 +81,7 @@ namespace WindowsFormArmorCar
                 return car;
             }           
             return null;
-        }      
+        }
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
@@ -105,7 +105,7 @@ namespace WindowsFormArmorCar
             for (int i = 0; i < sizeOfBase; i++)
             {
                 if (!CheckFreePlace(i))
-                {
+                {//если место не пустое                     
                     places[i].DrawArmorCar(g);
                 }
             }

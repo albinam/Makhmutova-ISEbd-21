@@ -44,5 +44,6 @@ namespace WindowsFormArmorCar
                 g.DrawLine(pen, _startPosX + 69, _startPosY + 15, _startPosX + 89, _startPosY + 15);
             }
         }
+
     }
 }
