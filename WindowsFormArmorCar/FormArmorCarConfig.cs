@@ -104,7 +104,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-
         /// <summary>        
         /// Передаем информацию при нажатии на Label      
         /// </summary>       
