@@ -58,20 +58,20 @@ namespace WindowsFormArmorCar
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-                if (maskedTextBoxPlace.Text != "")
+                if (maskedTextBox1.Text != "")
                 {
                     try
                     {
-                        var armor_car = military_base[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBoxPlace.Text);
+                        var armor_car = military_base[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox1.Text);
                         Bitmap bmp = new Bitmap(pictureBoxTakeArmorCar.Width, pictureBoxTakeArmorCar.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         armor_car.SetPosition(5, 5, pictureBoxTakeArmorCar.Width, pictureBoxTakeArmorCar.Height);
                         armor_car.DrawArmorCar(gr);
                         pictureBoxTakeArmorCar.Image = bmp;
-                        logger.Info("Изъят автомобиль " + armor_car.ToString() + " с места " + maskedTextBoxPlace.Text);
+                        logger.Info("Изъят автомобиль " + armor_car.ToString() + " с места " + maskedTextBox1.Text);
                         Draw();
                     }
-                    catch (ParkingNotFoundException ex)
+                    catch (MilitaryBaseNotFoundException ex)
                     {
                         MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         logger.Error("Не найдено");
@@ -120,11 +120,16 @@ namespace WindowsFormArmorCar
                     int place = military_base[listBoxLevels.SelectedIndex] + armor_car;
                     logger.Info("Добавлен автомобиль " + armor_car.ToString() + " на место " + place); Draw();
                 }
-                catch (ParkingOverflowException ex)
+                catch (MilitaryBaseOverflowException ex)
                 {
                     MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Переполнение");
 
+                }
+                catch (MilitaryBaseAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Дублирование");
                 }
                 catch (Exception ex)
                 {
@@ -158,7 +163,7 @@ namespace WindowsFormArmorCar
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Загружено из файла " + openFileDialog.FileName);
                 }
-                catch (ParkingOccupiedPlaceException ex)
+                catch (MilitaryBaseOccupiedPlaceException ex)
                 {
                     MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Занятое место");
@@ -170,5 +175,16 @@ namespace WindowsFormArmorCar
                 }
             Draw();
         }
+        /// <summary>        
+        /// Обработка нажатия кнопки "Сортировка"       
+        /// </summary>         
+        /// <param name="sender"></param>       
+        /// <param name="e"></param>        
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            military_base.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }   
     }
 }

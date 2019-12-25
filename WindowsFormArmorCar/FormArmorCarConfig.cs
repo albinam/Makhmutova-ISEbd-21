@@ -55,16 +55,17 @@ namespace WindowsFormArmorCar
         /// Отправляем цвет с панели         
         /// </summary>         
         /// <param name="sender"></param>        
-        //// <param name="e"></param>         
+        /// <param name="e"></param>         
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             (sender as Control).DoDragDrop((sender as Control).BackColor, 
                 DragDropEffects.Move | DragDropEffects.Copy);
         } 
+
         /// <summary>        
         /// Проверка получаемой информации (ее типа на соответствие требуемому)        
         /// </summary>         
-        //// <param name="sender"></param>         
+        /// <param name="sender"></param>         
         /// <param name="e"></param>         
         private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
         {

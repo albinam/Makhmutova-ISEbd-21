@@ -65,11 +65,11 @@ namespace WindowsFormArmorCar
         {
             if (p.places.Count == p._maxCount)
             {
-                throw new ParkingOverflowException();
+                throw new MilitaryBaseOverflowException();
             }
             if (p.places.ContainsValue(artilleryMount))
             {
-                throw new ParkingAlreadyHaveException();
+                throw new MilitaryBaseAlreadyHaveException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -97,7 +97,7 @@ namespace WindowsFormArmorCar
                 p.places.Remove(index);
                 return car;
             }
-            throw new ParkingNotFoundException(index);
+            throw new MilitaryBaseNotFoundException(index);
         }
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
@@ -159,7 +159,7 @@ namespace WindowsFormArmorCar
                 }
                 else
                 {
-                    throw new ParkingOccupiedPlaceException(ind);
+                    throw new MilitaryBaseOccupiedPlaceException(ind);
                 }
             }
         }
@@ -190,7 +190,6 @@ namespace WindowsFormArmorCar
         {
             places.Clear();
         }
-
         /// <summary>        
         /// Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции     
         /// </summary>         

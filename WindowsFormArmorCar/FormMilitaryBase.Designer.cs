@@ -31,9 +31,9 @@
             this.buttonTake = new System.Windows.Forms.Button();
             this.pictureBoxMilitaryBase = new System.Windows.Forms.PictureBox();
             this.pictureBoxTakeArmorCar = new System.Windows.Forms.PictureBox();
-            this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
-            this.labelPlace = new System.Windows.Forms.Label();
-            this.labelTakeCar = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.labelLevels = new System.Windows.Forms.Label();
             this.buttonSetArmorCar = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -74,30 +75,30 @@
             this.pictureBoxTakeArmorCar.TabIndex = 4;
             this.pictureBoxTakeArmorCar.TabStop = false;
             // 
-            // maskedTextBoxPlace
+            // maskedTextBox1
             // 
-            this.maskedTextBoxPlace.Location = new System.Drawing.Point(736, 297);
-            this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
-            this.maskedTextBoxPlace.Size = new System.Drawing.Size(42, 20);
-            this.maskedTextBoxPlace.TabIndex = 5;
+            this.maskedTextBox1.Location = new System.Drawing.Point(736, 297);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(42, 20);
+            this.maskedTextBox1.TabIndex = 5;
             // 
-            // labelPlace
+            // label1
             // 
-            this.labelPlace.AutoSize = true;
-            this.labelPlace.Location = new System.Drawing.Point(676, 300);
-            this.labelPlace.Name = "labelPlace";
-            this.labelPlace.Size = new System.Drawing.Size(39, 13);
-            this.labelPlace.TabIndex = 6;
-            this.labelPlace.Text = "Место";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(676, 300);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Место";
             // 
-            // labelTakeCar
+            // label2
             // 
-            this.labelTakeCar.AutoSize = true;
-            this.labelTakeCar.Location = new System.Drawing.Point(676, 281);
-            this.labelTakeCar.Name = "labelTakeCar";
-            this.labelTakeCar.Size = new System.Drawing.Size(91, 13);
-            this.labelTakeCar.TabIndex = 7;
-            this.labelTakeCar.Text = "Забрать машину";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(676, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Забрать машину";
             // 
             // listBoxLevels
             // 
@@ -169,18 +170,29 @@
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
             // 
+            // buttonSort
+            // 
+            this.buttonSort.Location = new System.Drawing.Point(669, 209);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(108, 43);
+            this.buttonSort.TabIndex = 12;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
+            // 
             // FormMilitaryBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.labelLevels);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.buttonSetArmorCar);
             this.Controls.Add(this.listBoxLevels);
-            this.Controls.Add(this.labelTakeCar);
-            this.Controls.Add(this.labelPlace);
-            this.Controls.Add(this.maskedTextBoxPlace);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.pictureBoxTakeArmorCar);
             this.Controls.Add(this.pictureBoxMilitaryBase);
             this.Controls.Add(this.buttonTake);
@@ -200,9 +212,9 @@
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxMilitaryBase;
         private System.Windows.Forms.PictureBox pictureBoxTakeArmorCar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
-        private System.Windows.Forms.Label labelPlace;
-        private System.Windows.Forms.Label labelTakeCar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label labelLevels;
         private System.Windows.Forms.Button buttonSetArmorCar;
@@ -212,5 +224,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
+        private System.Windows.Forms.Button buttonSort;
     }
 }
