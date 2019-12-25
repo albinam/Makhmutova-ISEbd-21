@@ -36,7 +36,7 @@ namespace WindowsFormArmorCar
             places = new Dictionary<int, T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-        } 
+        }
         /// <summary>         
         /// Перегрузка оператора сложения         
         /// Логика действия: на парковку добавляется автомобиль         
