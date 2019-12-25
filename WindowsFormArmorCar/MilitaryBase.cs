@@ -76,7 +76,7 @@ namespace WindowsFormArmorCar
                 p.places.Remove(index);
                 return car;
             }
-            throw new ParkingNotFoundException(index);
+            throw new MilitaryBaseNotFoundException(index);
         }
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
@@ -132,7 +132,7 @@ namespace WindowsFormArmorCar
                 {
                     return places[ind];
                 }
-                throw new ParkingNotFoundException(ind);
+                throw new MilitaryBaseNotFoundException(ind);
             }
             set
             {
@@ -143,7 +143,7 @@ namespace WindowsFormArmorCar
                 }
                 else
                 {
-                    throw new ParkingOccupiedPlaceException(ind);
+                    throw new MilitaryBaseOccupiedPlaceException(ind);
                 }
             }
         }
@@ -153,4 +153,3 @@ namespace WindowsFormArmorCar
         }
     }
 }
-
