@@ -61,7 +61,6 @@ namespace WindowsFormArmorCar
             (sender as Control).DoDragDrop((sender as Control).BackColor, 
                 DragDropEffects.Move | DragDropEffects.Copy);
         } 
-
         /// <summary>        
         /// Проверка получаемой информации (ее типа на соответствие требуемому)        
         /// </summary>         
