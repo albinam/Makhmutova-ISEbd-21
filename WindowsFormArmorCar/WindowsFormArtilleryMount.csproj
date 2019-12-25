@@ -93,9 +93,9 @@
     <Compile Include="ITransport.cs" />
     <Compile Include="MilitaryBase.cs" />
     <Compile Include="MultiLevelMilitaryBase.cs" />
-    <Compile Include="ParkingNotFoundException.cs" />
-    <Compile Include="ParkingOccupiedPlaceException.cs" />
-    <Compile Include="ParkingOverflowException.cs" />
+    <Compile Include="MilitatyBaseNotFoundException.cs" />
+    <Compile Include="MilitaryBaseOccupiedPlaceException.cs" />
+    <Compile Include="MilitaryBaseOverflowException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle.cs" />

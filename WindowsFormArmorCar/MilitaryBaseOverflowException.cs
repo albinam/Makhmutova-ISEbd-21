@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormArmorCar
 {
-    public class ParkingNotFoundException:Exception
+    public class MilitaryBaseOverflowException:Exception
     {
-        public ParkingNotFoundException(int i) : base("Не найден автомобиль по месту " + i)
+        public MilitaryBaseOverflowException() : base("На парковке нет свободных мест")
         { }
     }
 }

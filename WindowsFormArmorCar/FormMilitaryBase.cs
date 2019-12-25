@@ -71,7 +71,7 @@ namespace WindowsFormArmorCar
                         logger.Info("Изъят автомобиль " + armor_car.ToString() + " с места " + maskedTextBoxPlace.Text);
                         Draw();
                     }
-                    catch (ParkingNotFoundException ex)
+                    catch (MilitatyBaseNotFoundException ex)
                     {
                         MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         logger.Error("Не найдено");
@@ -120,7 +120,7 @@ namespace WindowsFormArmorCar
                     int place = military_base[listBoxLevels.SelectedIndex] + armor_car;
                     logger.Info("Добавлен автомобиль " + armor_car.ToString() + " на место " + place); Draw();
                 }
-                catch (ParkingOverflowException ex)
+                catch (MilitaryBaseOverflowException ex)
                 {
                     MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Переполнение");
@@ -158,7 +158,7 @@ namespace WindowsFormArmorCar
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Загружено из файла " + openFileDialog.FileName);
                 }
-                catch (ParkingOccupiedPlaceException ex)
+                catch (MilitaryBaseOccupiedPlaceException ex)
                 {
                     MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Занятое место");

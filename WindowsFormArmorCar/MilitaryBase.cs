@@ -48,7 +48,7 @@ namespace WindowsFormArmorCar
         {
             if (p.places.Count == p._maxCount)
             {
-                throw new ParkingOverflowException();
+                throw new MilitaryBaseOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -76,7 +76,7 @@ namespace WindowsFormArmorCar
                 p.places.Remove(index);
                 return car;
             }
-            throw new ParkingNotFoundException(index);
+            throw new MilitatyBaseNotFoundException(index);
         }      
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
@@ -138,10 +138,9 @@ namespace WindowsFormArmorCar
                 }
                 else
                 {
-                    throw new ParkingOccupiedPlaceException(ind);
+                    throw new MilitaryBaseOccupiedPlaceException(ind);
                 }
             }
         }
     }
 }
-
