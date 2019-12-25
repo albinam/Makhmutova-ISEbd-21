@@ -72,9 +72,9 @@ namespace WindowsFormArmorCar
         /// <param name="e"></param>  
         private void buttonTake_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (maskedTextBoxPlace.Text != "")
             {
-                var armor_car = military_base - Convert.ToInt32(maskedTextBox1.Text);
+                var armor_car = military_base - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (armor_car != null)
                 {
                     Bitmap bmp = new Bitmap(pictureBoxTakeArmorCar.Width, pictureBoxTakeArmorCar.Height);
