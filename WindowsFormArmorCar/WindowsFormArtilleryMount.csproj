@@ -78,6 +78,12 @@
     <Compile Include="FormArmorCarConfig.Designer.cs">
       <DependentUpon>FormArmorCarConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormArtilleryMount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtilleryMount.Designer.cs">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMilitaryBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormArmorCarConfig.resx">
       <DependentUpon>FormArmorCarConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArtilleryMount.resx">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMilitaryBase.resx">
       <DependentUpon>FormMilitaryBase.cs</DependentUpon>
