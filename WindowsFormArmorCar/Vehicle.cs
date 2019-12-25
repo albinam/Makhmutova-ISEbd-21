@@ -30,7 +30,6 @@ namespace WindowsFormArmorCar
         /// Вес автомобиля
         /// </summary>
         public float Weight { protected set; get; }
-
         /// <summary>
         /// Основной цвет кузова
         /// </summary>
