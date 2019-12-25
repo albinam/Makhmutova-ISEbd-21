@@ -29,6 +29,6 @@ namespace WindowsFormArmorCar
         /// Смена основного цвета автомобиля       
         /// </summary>        
         /// <param name="color"></param>        
-        void SetMainColor(Color color); 
+        void SetMainColor(Color color);
     }
 }

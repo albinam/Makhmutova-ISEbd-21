@@ -11,8 +11,8 @@ namespace WindowsFormArmorCar
     {
         /// <summary>        
         /// Список с уровнями парковки         
-        //// </summary>       
-        List<MilitaryBase<ITransport>> militaryBaseStages;
+        /// </summary>       
+        List<MilitaryBase<ITransport,IGuns>> militaryBaseStages;
         /// <summary>        
         /// Сколько мест на каждом уровне    
         /// </summary> 
@@ -27,10 +27,10 @@ namespace WindowsFormArmorCar
         /// <param name="pictureHeight"></param>        
         public MultiLevelMilitaryBase(int countStages, int pictureWidth, int pictureHeight)
         {
-            militaryBaseStages = new List<MilitaryBase<ITransport>>();
+            militaryBaseStages = new List<MilitaryBase<ITransport,IGuns>>();
             for (int i = 0; i < countStages; ++i)
             {
-                militaryBaseStages.Add(new MilitaryBase<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                militaryBaseStages.Add(new MilitaryBase<ITransport,IGuns>(countPlaces, pictureWidth, pictureHeight));
             }
         }
         /// <summary>        
@@ -38,7 +38,7 @@ namespace WindowsFormArmorCar
         /// </summary>       
         /// <param name="ind"></param>        
         /// <returns></returns>        
-        public MilitaryBase<ITransport> this[int ind]
+        public MilitaryBase<ITransport,IGuns> this[int ind]
         {
             get
             {
@@ -100,7 +100,7 @@ namespace WindowsFormArmorCar
                     {
                         militaryBaseStages.Clear();
                     }
-                    militaryBaseStages = new List<MilitaryBase<ITransport>>(count);
+                    militaryBaseStages = new List<MilitaryBase<ITransport,IGuns>>(count);
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace WindowsFormArmorCar
                     if (line == "Level")
                     {
                         counter++;
-                        militaryBaseStages.Add(new MilitaryBase<ITransport>(countPlaces,
+                        militaryBaseStages.Add(new MilitaryBase<ITransport,IGuns>(countPlaces,
         pictureWidth, pictureHeight));
                         continue;
                     }

@@ -31,7 +31,7 @@
             this.pictureBoxArmorCar = new System.Windows.Forms.PictureBox();
             this.labelArmorCar = new System.Windows.Forms.Label();
             this.labelArtilleryMount = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTypeOfCar = new System.Windows.Forms.GroupBox();
             this.panelArmorCar = new System.Windows.Forms.Panel();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
@@ -46,10 +46,16 @@
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.GroupBoxGunType = new System.Windows.Forms.GroupBox();
+            this.labelGunsWithAngle = new System.Windows.Forms.Label();
+            this.labelGunsWithPattern = new System.Windows.Forms.Label();
+            this.labelSimpleGuns = new System.Windows.Forms.Label();
+            this.labelGunsType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArmorCar)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTypeOfCar.SuspendLayout();
             this.panelArmorCar.SuspendLayout();
             this.groupBoxColors.SuspendLayout();
+            this.GroupBoxGunType.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxArmorCar
@@ -84,16 +90,16 @@
             this.labelArtilleryMount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelArtilleryMount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelArtilleryMount_MouseDown);
             // 
-            // groupBox1
+            // groupBoxTypeOfCar
             // 
-            this.groupBox1.Controls.Add(this.labelArmorCar);
-            this.groupBox1.Controls.Add(this.labelArtilleryMount);
-            this.groupBox1.Location = new System.Drawing.Point(26, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 145);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип кузова";
+            this.groupBoxTypeOfCar.Controls.Add(this.labelArmorCar);
+            this.groupBoxTypeOfCar.Controls.Add(this.labelArtilleryMount);
+            this.groupBoxTypeOfCar.Location = new System.Drawing.Point(26, 28);
+            this.groupBoxTypeOfCar.Name = "groupBoxTypeOfCar";
+            this.groupBoxTypeOfCar.Size = new System.Drawing.Size(200, 145);
+            this.groupBoxTypeOfCar.TabIndex = 3;
+            this.groupBoxTypeOfCar.TabStop = false;
+            this.groupBoxTypeOfCar.Text = "Тип кузова";
             // 
             // panelArmorCar
             // 
@@ -101,7 +107,7 @@
             this.panelArmorCar.Controls.Add(this.labelDopColor);
             this.panelArmorCar.Controls.Add(this.labelBaseColor);
             this.panelArmorCar.Controls.Add(this.pictureBoxArmorCar);
-            this.panelArmorCar.Location = new System.Drawing.Point(232, 17);
+            this.panelArmorCar.Location = new System.Drawing.Point(232, 19);
             this.panelArmorCar.Name = "panelArmorCar";
             this.panelArmorCar.Size = new System.Drawing.Size(193, 218);
             this.panelArmorCar.TabIndex = 4;
@@ -244,22 +250,83 @@
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // GroupBoxGunType
+            // 
+            this.GroupBoxGunType.Controls.Add(this.labelGunsWithAngle);
+            this.GroupBoxGunType.Controls.Add(this.labelGunsWithPattern);
+            this.GroupBoxGunType.Controls.Add(this.labelSimpleGuns);
+            this.GroupBoxGunType.Location = new System.Drawing.Point(619, 19);
+            this.GroupBoxGunType.Name = "GroupBoxGunType";
+            this.GroupBoxGunType.Size = new System.Drawing.Size(172, 140);
+            this.GroupBoxGunType.TabIndex = 9;
+            this.GroupBoxGunType.TabStop = false;
+            this.GroupBoxGunType.Text = "Тип орудия";
+            // 
+            // labelGunsWithAngle
+            // 
+            this.labelGunsWithAngle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGunsWithAngle.Location = new System.Drawing.Point(13, 91);
+            this.labelGunsWithAngle.Name = "labelGunsWithAngle";
+            this.labelGunsWithAngle.Size = new System.Drawing.Size(146, 29);
+            this.labelGunsWithAngle.TabIndex = 2;
+            this.labelGunsWithAngle.Text = "Орудие под углом";
+            this.labelGunsWithAngle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGunsWithAngle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelGunsWithAngle_MouseDown);
+            // 
+            // labelGunsWithPattern
+            // 
+            this.labelGunsWithPattern.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGunsWithPattern.Location = new System.Drawing.Point(13, 56);
+            this.labelGunsWithPattern.Name = "labelGunsWithPattern";
+            this.labelGunsWithPattern.Size = new System.Drawing.Size(146, 29);
+            this.labelGunsWithPattern.TabIndex = 1;
+            this.labelGunsWithPattern.Text = "Орудие с рисунком";
+            this.labelGunsWithPattern.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGunsWithPattern.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelGunsWithPattern_MouseDown);
+            // 
+            // labelSimpleGuns
+            // 
+            this.labelSimpleGuns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSimpleGuns.Location = new System.Drawing.Point(13, 16);
+            this.labelSimpleGuns.Name = "labelSimpleGuns";
+            this.labelSimpleGuns.Size = new System.Drawing.Size(146, 29);
+            this.labelSimpleGuns.TabIndex = 0;
+            this.labelSimpleGuns.Text = "Простое орудие";
+            this.labelSimpleGuns.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSimpleGuns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelSimpleGuns_MouseDown);
+            // 
+            // labelGunsType
+            // 
+            this.labelGunsType.AllowDrop = true;
+            this.labelGunsType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGunsType.Location = new System.Drawing.Point(626, 169);
+            this.labelGunsType.Name = "labelGunsType";
+            this.labelGunsType.Size = new System.Drawing.Size(165, 66);
+            this.labelGunsType.TabIndex = 10;
+            this.labelGunsType.Text = "Тип орудия";
+            this.labelGunsType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGunsType.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelGunsType_DragDrop);
+            this.labelGunsType.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelGunsType_DragEnter);
+            // 
             // FormArmorCarConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 294);
+            this.ClientSize = new System.Drawing.Size(824, 294);
+            this.Controls.Add(this.labelGunsType);
+            this.Controls.Add(this.GroupBoxGunType);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxColors);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxTypeOfCar);
             this.Controls.Add(this.panelArmorCar);
             this.Name = "FormArmorCarConfig";
             this.Text = "FormArmorCarConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArmorCar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxTypeOfCar.ResumeLayout(false);
             this.panelArmorCar.ResumeLayout(false);
             this.groupBoxColors.ResumeLayout(false);
+            this.GroupBoxGunType.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,7 +336,7 @@
         private System.Windows.Forms.PictureBox pictureBoxArmorCar;
         private System.Windows.Forms.Label labelArmorCar;
         private System.Windows.Forms.Label labelArtilleryMount;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTypeOfCar;
         private System.Windows.Forms.Panel panelArmorCar;
         private System.Windows.Forms.Panel panelBlack;
         private System.Windows.Forms.Panel panelGreen;
@@ -284,5 +351,10 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelBaseColor;
         private System.Windows.Forms.Label labelDopColor;
+        private System.Windows.Forms.GroupBox GroupBoxGunType;
+        private System.Windows.Forms.Label labelGunsWithAngle;
+        private System.Windows.Forms.Label labelGunsWithPattern;
+        private System.Windows.Forms.Label labelSimpleGuns;
+        private System.Windows.Forms.Label labelGunsType;
     }
 }
