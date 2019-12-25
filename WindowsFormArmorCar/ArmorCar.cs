@@ -94,6 +94,6 @@ namespace WindowsFormArmorCar
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 29));
             Pen pen2 = new Pen(Color.Red);
             g.DrawPolygon(pen2, star.ToArray<Point>());
-        }    
+        }
     }
 }

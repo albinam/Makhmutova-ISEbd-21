@@ -31,7 +31,7 @@
             this.pictureBoxArmorCar = new System.Windows.Forms.PictureBox();
             this.labelArmorCar = new System.Windows.Forms.Label();
             this.labelArtilleryMount = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTypeOfCar = new System.Windows.Forms.GroupBox();
             this.panelArmorCar = new System.Windows.Forms.Panel();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.labelSimpleGuns = new System.Windows.Forms.Label();
             this.labelGunsType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArmorCar)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTypeOfCar.SuspendLayout();
             this.panelArmorCar.SuspendLayout();
             this.groupBoxColors.SuspendLayout();
             this.GroupBoxGunType.SuspendLayout();
@@ -90,16 +90,16 @@
             this.labelArtilleryMount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelArtilleryMount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelArtilleryMount_MouseDown);
             // 
-            // groupBox1
+            // groupBoxTypeOfCar
             // 
-            this.groupBox1.Controls.Add(this.labelArmorCar);
-            this.groupBox1.Controls.Add(this.labelArtilleryMount);
-            this.groupBox1.Location = new System.Drawing.Point(26, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 145);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип кузова";
+            this.groupBoxTypeOfCar.Controls.Add(this.labelArmorCar);
+            this.groupBoxTypeOfCar.Controls.Add(this.labelArtilleryMount);
+            this.groupBoxTypeOfCar.Location = new System.Drawing.Point(26, 28);
+            this.groupBoxTypeOfCar.Name = "groupBoxTypeOfCar";
+            this.groupBoxTypeOfCar.Size = new System.Drawing.Size(200, 145);
+            this.groupBoxTypeOfCar.TabIndex = 3;
+            this.groupBoxTypeOfCar.TabStop = false;
+            this.groupBoxTypeOfCar.Text = "Тип кузова";
             // 
             // panelArmorCar
             // 
@@ -318,12 +318,12 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBoxColors);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxTypeOfCar);
             this.Controls.Add(this.panelArmorCar);
             this.Name = "FormArmorCarConfig";
             this.Text = "FormArmorCarConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArmorCar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxTypeOfCar.ResumeLayout(false);
             this.panelArmorCar.ResumeLayout(false);
             this.groupBoxColors.ResumeLayout(false);
             this.GroupBoxGunType.ResumeLayout(false);
@@ -336,7 +336,7 @@
         private System.Windows.Forms.PictureBox pictureBoxArmorCar;
         private System.Windows.Forms.Label labelArmorCar;
         private System.Windows.Forms.Label labelArtilleryMount;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTypeOfCar;
         private System.Windows.Forms.Panel panelArmorCar;
         private System.Windows.Forms.Panel panelBlack;
         private System.Windows.Forms.Panel panelGreen;
