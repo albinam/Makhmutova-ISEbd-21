@@ -76,7 +76,7 @@ namespace WindowsFormArmorCar
         }
         public override void DrawArmorCar(Graphics g)
         {
-             Pen penBlack = new Pen(Color.Black);
+            Pen penBlack = new Pen(Color.Black);
             g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
             Brush br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX + 10, _startPosY + 20, 70, 22);
