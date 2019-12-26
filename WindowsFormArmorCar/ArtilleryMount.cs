@@ -137,21 +137,21 @@ namespace WindowsFormArmorCar
         }
         public void DrawArmorCar(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
-            g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
+            Pen penBlack = new Pen(Color.Black);
+            g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
             if (Flag)
             {
-                g.DrawRectangle(pen, _startPosX + 45, _startPosY - 10, 7, 5);
-                Brush br3 = new SolidBrush(Color.White);
-                g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
-                g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
+                g.DrawRectangle(penBlack, _startPosX + 45, _startPosY - 10, 7, 5);
+                Brush brushWhite = new SolidBrush(Color.White);
+                g.FillRectangle(brushWhite, _startPosX + 45, _startPosY - 10, 7, 5);
+                g.DrawLine(penBlack, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
 
             }
-            Brush br = new SolidBrush(MainColor);
-            g.FillRectangle(br, _startPosX + 10, _startPosY + 20, 70, 22);
-            Brush br1 = new SolidBrush(DopColor);
-            g.FillRectangle(br1, _startPosX + 22, _startPosY + 5, 47, 15);
-            Brush br2 = new SolidBrush(Color.Brown);
+            Brush brush = new SolidBrush(MainColor);
+            g.FillRectangle(brush, _startPosX + 10, _startPosY + 20, 70, 22);
+            Brush brushDopColor = new SolidBrush(DopColor);
+            g.FillRectangle(brushDopColor, _startPosX + 22, _startPosY + 5, 47, 15);
+            Brush brushBrown = new SolidBrush(Color.Brown);
             List<Point> star = new List<Point>(12);
             star.Add(new Point((int)_startPosX + 41, (int)_startPosY + 26));
             star.Add(new Point((int)_startPosX + 39, (int)_startPosY + 29));
@@ -163,33 +163,31 @@ namespace WindowsFormArmorCar
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 32));
             star.Add(new Point((int)_startPosX + 46, (int)_startPosY + 29));
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 29));
-            Pen pen2 = new Pen(Color.Red);
-            Brush br4 = new SolidBrush(Color.Red);
-            g.DrawPolygon(pen2, star.ToArray<Point>());
-            g.DrawRectangle(pen, _startPosX + 7, _startPosY + 42, 77, 10);
-            g.FillRectangle(br2, _startPosX + 7, _startPosY + 42, 77, 10);
-            g.DrawEllipse(pen, _startPosX + 8, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 17, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 26, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 35, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 44, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 53, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 62, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 71, _startPosY + 42, 9, 9);
-            g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
+            Pen penStar = new Pen(Color.Red);
+            g.DrawPolygon(penStar, star.ToArray<Point>());
+            g.DrawRectangle(penBlack, _startPosX + 7, _startPosY + 42, 77, 10);
+            g.FillRectangle(brushBrown, _startPosX + 7, _startPosY + 42, 77, 10);
+            g.DrawEllipse(penBlack, _startPosX + 8, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 17, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 26, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 35, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 44, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 53, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 62, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 71, _startPosY + 42, 9, 9);
+            g.DrawLine(penBlack, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
             if (Mask)
             {
-                Pen pen1 = new Pen(MainColor);
-                g.DrawLine(pen1, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
-            }
+                Pen pen = new Pen(MainColor);
+                g.DrawLine(pen, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
+                g.DrawLine(pen, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
             }
         }
     }
