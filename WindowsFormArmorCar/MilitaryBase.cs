@@ -48,7 +48,7 @@ namespace WindowsFormArmorCar
         /// <returns></returns>     
         public static int operator +(MilitaryBase<T, N> p, T artilleryMount)
         {
-            for (int i = 0; i < p.sizeOfBase; i++)
+            for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
@@ -77,7 +77,8 @@ namespace WindowsFormArmorCar
                 return car;
             }
             throw new MilitaryBaseNotFoundException(index);
-        }
+        }  
+        /// <summary>
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
         /// <param name="index">Номер парковочного места (порядковый номер в массиве)</param>         

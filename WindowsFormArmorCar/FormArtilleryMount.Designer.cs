@@ -58,7 +58,7 @@
             this.buttonSetArtilleryMount.TabIndex = 1;
             this.buttonSetArtilleryMount.Text = "Создать самоходную артиллерейскую установку";
             this.buttonSetArtilleryMount.UseVisualStyleBackColor = true;
-            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonUp
             // 
@@ -112,7 +112,7 @@
             this.buttonSetArmorCar.TabIndex = 6;
             this.buttonSetArmorCar.Text = "Создать бронированную машину";
             this.buttonSetArmorCar.UseVisualStyleBackColor = true;
-            this.buttonSetArmorCar.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSetArmorCar.Click += new System.EventHandler(this.buttonSetArmorCar_Click);
             // 
             // FormArtilleryMount
             // 
