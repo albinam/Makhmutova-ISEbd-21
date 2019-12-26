@@ -27,9 +27,9 @@ namespace WindowsFormArmorCar
         /// <summary>        
         /// Конструктор       
         /// </summary>         
-        /// /// <param name="sizes">Количество мест на парковке</param>        
-        /// /// <param name="pictureWidth">Рамзер парковки - ширина</param>        
-        /// /// <param name="pictureHeight">Рамзер парковки - высота</param>         
+        /// <param name="sizes">Количество мест на парковке</param>        
+        /// <param name="pictureWidth">Рамзер парковки - ширина</param>        
+        /// <param name="pictureHeight">Рамзер парковки - высота</param>         
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
             sizeOfBase= sizes;
