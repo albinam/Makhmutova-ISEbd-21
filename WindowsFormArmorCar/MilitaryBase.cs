@@ -114,7 +114,7 @@ namespace WindowsFormArmorCar
             {
                 //отрисовываем, по 5 мест на линии                 
                 for (int j = 0; j < 5; ++j)
-                {//линия рамзетки места                     
+                {//линия разметки места                     
                     g.DrawLine(pen, i * _placeSizeWidth, j * _placeSizeHeight,
                         i * _placeSizeWidth + 120, j * _placeSizeHeight);
                 }
