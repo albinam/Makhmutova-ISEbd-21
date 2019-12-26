@@ -43,9 +43,9 @@ namespace WindowsFormArmorCar
         /// <summary>        
         /// Конструктор       
         /// </summary>         
-        /// /// <param name="sizes">Количество мест на парковке</param>        
-        /// /// <param name="pictureWidth">Рамзер парковки - ширина</param>        
-        /// /// <param name="pictureHeight">Рамзер парковки - высота</param>         
+        /// <param name="sizes">Количество мест на парковке</param>        
+        /// <param name="pictureWidth">Рамзер парковки - ширина</param>        
+        /// <param name="pictureHeight">Рамзер парковки - высота</param>         
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -122,9 +122,9 @@ namespace WindowsFormArmorCar
             }
         }
         /// <summary>         
-        /// /// Метод отрисовки разметки парковочных мест      
-        /// /// </summary>       
-        /// /// <param name="g"></param>        
+        /// Метод отрисовки разметки парковочных мест      
+        /// </summary>       
+        /// <param name="g"></param>        
         private void DrawMilitaryBase(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);             //границы праковки             
