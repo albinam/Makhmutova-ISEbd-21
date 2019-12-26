@@ -58,8 +58,6 @@ namespace WindowsFormArmorCar
         /// Дополнительный цвет
         /// </summary>
         public Color DopColor { private set; get; }
-
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -70,7 +68,6 @@ namespace WindowsFormArmorCar
         /// <param name="gunRange">дальность стрельбы</param>
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
-
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask)
         {
