@@ -69,15 +69,15 @@ namespace WindowsFormArmorCar
         /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
         /// <returns></returns> 
         public static T operator -(MilitaryBase<T> p, int index)
-            {
-               if (!p.CheckFreePlace(index))
-                {
-                    T car = p.places[index];
-                    p.places.Remove(index);
-                    return car;
-                }
-                throw new MilitatyBaseNotFoundException(index);
-            }      
+        {
+           if (!p.CheckFreePlace(index))
+           {
+                T car = p.places[index];
+                p.places.Remove(index);
+                return car;
+            }
+            throw new MilitatyBaseNotFoundException(index);
+        }      
         /// <summary>         
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
