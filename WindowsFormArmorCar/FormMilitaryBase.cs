@@ -171,7 +171,6 @@ namespace WindowsFormArmorCar
                 }
             Draw();
         }
-
         private void сохранитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
