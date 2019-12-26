@@ -29,7 +29,6 @@ namespace WindowsFormArmorCar
         {
             Bitmap bmp = new Bitmap(pictureBoxArtilleryMount.Width, pictureBoxArtilleryMount.Height);
             Graphics gr = Graphics.FromImage(bmp);
-
             car.DrawArmorCar(gr);
             pictureBoxArtilleryMount.Image = bmp;
         }
