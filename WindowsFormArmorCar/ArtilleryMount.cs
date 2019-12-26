@@ -86,31 +86,31 @@ namespace WindowsFormArmorCar
         }
         public override void DrawArmorCar(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
-            g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
-            Brush br1 = new SolidBrush(DopColor);
-            g.FillRectangle(br1, _startPosX + 22, _startPosY + 5, 47, 15);
-            g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
+            Pen penBlack = new Pen(Color.Black);
+            g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
+            Brush brushDopColor = new SolidBrush(DopColor);
+            g.FillRectangle(brushDopColor, _startPosX + 22, _startPosY + 5, 47, 15);
+            g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
             if (Flag)
             {
-                g.DrawRectangle(pen, _startPosX + 45, _startPosY - 10, 7, 5);
-                Brush br3 = new SolidBrush(Color.White);
-                g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
-                g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
+                g.DrawRectangle(penBlack, _startPosX + 45, _startPosY - 10, 7, 5);
+                Brush brushWhite = new SolidBrush(Color.White);
+                g.FillRectangle(brushWhite, _startPosX + 45, _startPosY - 10, 7, 5);
+                g.DrawLine(penBlack, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
             }
             base.DrawArmorCar(g);
             if (Mask)
             {
-                Pen pen1 = new Pen(MainColor);
-                g.DrawLine(pen1, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
-                g.DrawLine(pen1, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
+                Pen penMask = new Pen(MainColor);
+                g.DrawLine(penMask, _startPosX, _startPosY, _startPosX + 80, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 10, _startPosY, _startPosX + 90, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 20, _startPosY, _startPosX + 100, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 30, _startPosY, _startPosX + 110, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 40, _startPosY, _startPosX + 120, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 100, _startPosY, _startPosX + 20, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 90, _startPosY, _startPosX + 10, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 80, _startPosY, _startPosX, _startPosY + 60);
+                g.DrawLine(penMask, _startPosX + 70, _startPosY, _startPosX - 10, _startPosY + 60);
             }
             IGuns guns;
             switch (GunsType)
