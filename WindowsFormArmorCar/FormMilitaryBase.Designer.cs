@@ -107,7 +107,7 @@
             // labelTakeCar
             // 
             this.labelTakeCar.AutoSize = true;
-            this.labelTakeCar.Location = new System.Drawing.Point(676, 281);
+            this.labelTakeCar.Location = new System.Drawing.Point(676, 269);
             this.labelTakeCar.Name = "labelTakeCar";
             this.labelTakeCar.Size = new System.Drawing.Size(91, 13);
             this.labelTakeCar.TabIndex = 7;

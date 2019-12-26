@@ -64,6 +64,12 @@
     <Compile Include="ArmorCar.cs" />
     <Compile Include="ArtilleryMount.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="FormArtilleryMount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtilleryMount.Designer.cs">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMilitaryBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="FormArtilleryMount.resx">
+      <DependentUpon>FormArtilleryMount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMilitaryBase.resx">
       <DependentUpon>FormMilitaryBase.cs</DependentUpon>
     </EmbeddedResource>
