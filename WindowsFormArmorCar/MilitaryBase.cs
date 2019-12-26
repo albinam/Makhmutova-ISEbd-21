@@ -61,14 +61,14 @@ namespace WindowsFormArmorCar
             }
             return -1;
         }
-    /// <summary>         
-    /// Перегрузка оператора вычитания       
-    /// Логика действия: с парковки забираем автомобиль      
-    /// </summary>         
-    /// <param name="p">Парковка</param>       
-    /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
-    /// <returns></returns> 
-    public static T operator -(MilitaryBase<T> p, int index)
+        /// <summary>         
+        /// Перегрузка оператора вычитания       
+        /// Логика действия: с парковки забираем автомобиль      
+        /// </summary>         
+        /// <param name="p">Парковка</param>       
+        /// <param name="index">Индекс места, с которого пытаемся извлечь объект</param>         
+        /// <returns></returns> 
+        public static T operator -(MilitaryBase<T> p, int index)
         {
            if (!p.CheckFreePlace(index))
             {
