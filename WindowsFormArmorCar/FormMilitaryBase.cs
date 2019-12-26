@@ -51,7 +51,7 @@ namespace WindowsFormArmorCar
         /// </summary>       
         /// <param name="sender"></param>        
         /// <param name="e"></param>  
-       private void buttonTake_Click(object sender, EventArgs e)
+        private void buttonTake_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
@@ -143,7 +143,6 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
-
         private void сохранитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -160,7 +159,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-
         private void загрузитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
