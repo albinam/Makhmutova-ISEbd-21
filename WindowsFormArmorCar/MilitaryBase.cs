@@ -70,8 +70,8 @@ namespace WindowsFormArmorCar
         /// <returns></returns> 
         public static T operator -(MilitaryBase<T> p, int index)
         {
-           if (!p.CheckFreePlace(index))
-           {
+            if (!p.CheckFreePlace(index))
+            {
                 T car = p.places[index];
                 p.places.Remove(index);
                 return car;
