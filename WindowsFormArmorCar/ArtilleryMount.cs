@@ -73,7 +73,6 @@ namespace WindowsFormArmorCar
         /// <param name="flag">сдается или нет</param>
         /// <param name="mask">есть максировка или нет</param>
         /// <param name="guns">количество орудий</param>
-
         public ArtilleryMount(int maxSpeed, float weight, Color mainColor, Color dopColor,
       float gunRange, bool flag, bool mask, Guns guns)
         {
