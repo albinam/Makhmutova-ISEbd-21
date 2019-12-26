@@ -68,8 +68,8 @@ namespace WindowsFormArmorCar
         {
             Pen penBlack = new Pen(Color.Black);
             g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
-            Brush br = new SolidBrush(MainColor);
-            g.FillRectangle(br, _startPosX + 10, _startPosY + 20, 70, 22);
+            Brush brush = new SolidBrush(MainColor);
+            g.FillRectangle(brush, _startPosX + 10, _startPosY + 20, 70, 22);
             Brush brushBrown = new SolidBrush(Color.Brown);
             g.DrawRectangle(penBlack, _startPosX + 7, _startPosY + 42, 75, 10);
             g.FillRectangle(brushBrown, _startPosX + 7, _startPosY + 42, 75, 10);
