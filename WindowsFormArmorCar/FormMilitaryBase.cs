@@ -92,7 +92,7 @@ namespace WindowsFormArmorCar
         /// </summary>       
         /// <param name="sender"></param>        
         /// <param name="e"></param>  
-        private void buttonTake_Click(object sender, EventArgs e)
+       private void buttonTake_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
