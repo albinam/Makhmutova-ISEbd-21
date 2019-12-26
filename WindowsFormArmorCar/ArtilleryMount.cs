@@ -72,7 +72,6 @@ namespace WindowsFormArmorCar
                 case 2:
                     guns = new GunsWithAngle(_startPosX, _startPosY);
                     break;
-
                 default:
                     guns = new SimpleGuns(_startPosX, _startPosY);
                     break;
