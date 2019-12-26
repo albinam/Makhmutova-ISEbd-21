@@ -19,14 +19,14 @@ namespace WindowsFormArmorCar
         public void GunsDraw(Graphics g, Guns numberOfGuns, Color color)
         {
             int n = (int)numberOfGuns;
-            Brush br1 = new SolidBrush(color);
-            g.FillRectangle(br1, _startPosX + 22, _startPosY + 5, 47, 15);
-            Brush br2 = new SolidBrush(Color.White);
-            g.FillRectangle(br2, _startPosX + 25, _startPosY + 8, 8, 2);
-            Brush br3 = new SolidBrush(Color.Blue);
-            g.FillRectangle(br3, _startPosX + 25, _startPosY + 10, 8, 2);
-            Brush br4 = new SolidBrush(Color.Red);
-            g.FillRectangle(br4, _startPosX + 25, _startPosY + 12, 8, 2);
+            Brush brush = new SolidBrush(color);
+            g.FillRectangle(brush, _startPosX + 22, _startPosY + 5, 47, 15);
+            Brush brushWhite = new SolidBrush(Color.White);
+            g.FillRectangle(brushWhite, _startPosX + 25, _startPosY + 8, 8, 2);
+            Brush brushBlue = new SolidBrush(Color.Blue);
+            g.FillRectangle(brushBlue, _startPosX + 25, _startPosY + 10, 8, 2);
+            Brush brushRed = new SolidBrush(Color.Red);
+            g.FillRectangle(brushRed, _startPosX + 25, _startPosY + 12, 8, 2);
             Pen pen = new Pen(color);
             if (n == 0)
             {
