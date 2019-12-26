@@ -58,7 +58,7 @@
             this.buttonSetArtilleryMount.TabIndex = 1;
             this.buttonSetArtilleryMount.Text = "Создать самоходную артиллерейскую установку";
             this.buttonSetArtilleryMount.UseVisualStyleBackColor = true;
-            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonCreateArtilleryMount_Click);
+            this.buttonSetArtilleryMount.Click += new System.EventHandler(this.buttonSetArtilleryMount_Click);
             // 
             // buttonUp
             // 

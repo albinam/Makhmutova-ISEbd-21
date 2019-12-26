@@ -17,10 +17,10 @@ namespace WindowsFormArmorCar
         {
             InitializeComponent();
         }
-        private void buttonCreateArtilleryMount_Click(object sender, EventArgs e)
+        private void buttonSetArtilleryMount_Click(object sender, EventArgs e)
         {
             car = new ArtilleryMount(100, 300, Color.Green,
-           Color.Black, 20, true, false,Guns.Three);
+           Color.Black, 20, true, true);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
            pictureBoxArtilleryMount.Height);
             Draw();
@@ -52,7 +52,7 @@ namespace WindowsFormArmorCar
             }
             Draw();
         }
-        private void buttonCreateArmorCar_Click(object sender, EventArgs e)
+        private void buttonSetArmorCar_Click(object sender, EventArgs e)
         {
             car = new ArmorCar(100, 300, Color.Green);
             car.SetPosition(50, 50, pictureBoxArtilleryMount.Width,
