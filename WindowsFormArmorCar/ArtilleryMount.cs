@@ -53,10 +53,10 @@ namespace WindowsFormArmorCar
             g.DrawLine(pen, _startPosX + 69, _startPosY + 12, _startPosX + 89, _startPosY + 12);
             if (Flag)
             {
-                g.DrawRectangle(pen, _startPosX + 45, _startPosY - 10, 7, 5);
-                Brush br3 = new SolidBrush(Color.White);
-                g.FillRectangle(br3, _startPosX + 45, _startPosY - 10, 7, 5);
-                g.DrawLine(pen, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
+                g.DrawRectangle(penBlack, _startPosX + 45, _startPosY - 10, 7, 5);
+                Brush brushWhite = new SolidBrush(Color.White);
+                g.FillRectangle(brushWhite, _startPosX + 45, _startPosY - 10, 7, 5);
+                g.DrawLine(penBlack, _startPosX + 52, _startPosY - 5, _startPosX + 52, _startPosY + 5);
 
             }
             base.DrawArmorCar(g);
