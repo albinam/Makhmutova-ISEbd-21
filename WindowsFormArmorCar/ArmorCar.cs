@@ -66,21 +66,21 @@ namespace WindowsFormArmorCar
         }
         public override void DrawArmorCar(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
-            g.DrawRectangle(pen, _startPosX + 10, _startPosY + 20, 70, 22);
+             Pen penBlack = new Pen(Color.Black);
+            g.DrawRectangle(penBlack, _startPosX + 10, _startPosY + 20, 70, 22);
             Brush br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX + 10, _startPosY + 20, 70, 22);
-            Brush br2 = new SolidBrush(Color.Brown);
-            g.DrawRectangle(pen, _startPosX + 7, _startPosY + 42, 75, 10);
-            g.FillRectangle(br2, _startPosX + 7, _startPosY + 42, 75, 10);
-            g.DrawEllipse(pen, _startPosX + 8, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 17, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 26, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 35, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 44, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 53, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 62, _startPosY + 42, 9, 9);
-            g.DrawEllipse(pen, _startPosX + 71, _startPosY + 42, 9, 9);
+            Brush brushBrown = new SolidBrush(Color.Brown);
+            g.DrawRectangle(penBlack, _startPosX + 7, _startPosY + 42, 75, 10);
+            g.FillRectangle(brushBrown, _startPosX + 7, _startPosY + 42, 75, 10);
+            g.DrawEllipse(penBlack, _startPosX + 8, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 17, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 26, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 35, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 44, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 53, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 62, _startPosY + 42, 9, 9);
+            g.DrawEllipse(penBlack, _startPosX + 71, _startPosY + 42, 9, 9);
             List<Point> star = new List<Point>(12);
             star.Add(new Point((int)_startPosX + 41, (int)_startPosY + 26));
             star.Add(new Point((int)_startPosX + 39, (int)_startPosY + 29));
@@ -92,8 +92,8 @@ namespace WindowsFormArmorCar
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 32));
             star.Add(new Point((int)_startPosX + 46, (int)_startPosY + 29));
             star.Add(new Point((int)_startPosX + 43, (int)_startPosY + 29));
-            Pen pen2 = new Pen(Color.Red);
-            g.DrawPolygon(pen2, star.ToArray<Point>());
+            Pen penStar = new Pen(Color.Red);
+            g.DrawPolygon(penStar, star.ToArray<Point>());
         }
     }
 }
