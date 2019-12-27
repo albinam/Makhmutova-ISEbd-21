@@ -37,17 +37,17 @@
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.labelLevels = new System.Windows.Forms.Label();
             this.buttonSetArmorCar = new System.Windows.Forms.Button();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.menuStripMilitaryBase = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьУровеньToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьУровеньToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogMilitaryBase = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialogMilitaryBase = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).BeginInit();
-            this.menuStrip.SuspendLayout();
+            this.menuStripMilitaryBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonTake
@@ -129,15 +129,15 @@
             this.buttonSetArmorCar.UseVisualStyleBackColor = true;
             this.buttonSetArmorCar.Click += new System.EventHandler(this.buttonSetArmorCar_Click);
             // 
-            // menuStrip
+            // menuStripMilitaryBase
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripMilitaryBase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip.TabIndex = 11;
-            this.menuStrip.Text = "menuStrip1";
+            this.menuStripMilitaryBase.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMilitaryBase.Name = "menuStripMilitaryBase";
+            this.menuStripMilitaryBase.Size = new System.Drawing.Size(800, 24);
+            this.menuStripMilitaryBase.TabIndex = 11;
+            this.menuStripMilitaryBase.Text = "menuStripMilitaryBase";
             // 
             // toolStripMenuItemFile
             // 
@@ -160,7 +160,7 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
@@ -178,14 +178,14 @@
             this.загрузитьУровеньToolStripMenuItem.Text = "Загрузить уровень";
             this.загрузитьУровеньToolStripMenuItem.Click += new System.EventHandler(this.загрузитьУровеньToolStripMenuItem_Click);
             // 
-            // openFileDialog
+            // openFileDialogMilitaryBase
             // 
-            this.openFileDialog.FileName = "openFileDialog";
-            this.openFileDialog.Filter = "txt file | *.txt";
+            this.openFileDialogMilitaryBase.FileName = "openFileDialogMilitaryBase";
+            this.openFileDialogMilitaryBase.Filter = "txt file | *.txt";
             // 
-            // saveFileDialog
+            // saveFileDialogMilitaryBase
             // 
-            this.saveFileDialog.Filter = "txt file | *.txt";
+            this.saveFileDialogMilitaryBase.Filter = "txt file | *.txt";
             // 
             // FormMilitaryBase
             // 
@@ -193,7 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelLevels);
-            this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.menuStripMilitaryBase);
             this.Controls.Add(this.buttonSetArmorCar);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.labelTakeCar);
@@ -202,13 +202,13 @@
             this.Controls.Add(this.pictureBoxTakeArmorCar);
             this.Controls.Add(this.pictureBoxMilitaryBase);
             this.Controls.Add(this.buttonTake);
-            this.MainMenuStrip = this.menuStrip;
+            this.MainMenuStrip = this.menuStripMilitaryBase;
             this.Name = "FormMilitaryBase";
             this.Text = "FormMilitaryBase";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMilitaryBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeArmorCar)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.menuStripMilitaryBase.ResumeLayout(false);
+            this.menuStripMilitaryBase.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,9 +224,9 @@
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label labelLevels;
         private System.Windows.Forms.Button buttonSetArmorCar;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.MenuStrip menuStripMilitaryBase;
+        private System.Windows.Forms.OpenFileDialog openFileDialogMilitaryBase;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMilitaryBase;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
