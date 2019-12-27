@@ -172,12 +172,10 @@ namespace WindowsFormArmorCar
         {
             labelSimpleGuns.DoDragDrop(labelSimpleGuns.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
-
         private void labelGunsWithPattern_MouseDown(object sender, MouseEventArgs e)
         {
             labelGunsWithPattern.DoDragDrop(labelGunsWithPattern.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
-
         private void labelGunsWithAngle_MouseDown(object sender, MouseEventArgs e)
         {
             labelGunsWithAngle.DoDragDrop(labelGunsWithAngle.Text, DragDropEffects.Move | DragDropEffects.Copy);

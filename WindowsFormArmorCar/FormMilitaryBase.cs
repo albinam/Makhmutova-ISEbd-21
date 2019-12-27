@@ -143,7 +143,6 @@ namespace WindowsFormArmorCar
                 Draw();
             }
         }
-
         private void сохранитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -160,7 +159,6 @@ namespace WindowsFormArmorCar
                 }
             }
         }
-
         private void загрузитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
