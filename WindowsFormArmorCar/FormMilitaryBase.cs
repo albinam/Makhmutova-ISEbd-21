@@ -58,17 +58,17 @@ namespace WindowsFormArmorCar
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-                if (maskedTextBox1.Text != "")
+                if (maskedTextBoxPlace.Text != "")
                 {
                     try
                     {
-                        var armor_car = military_base[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox1.Text);
+                        var armor_car = military_base[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBoxPlace.Text);
                         Bitmap bmp = new Bitmap(pictureBoxTakeArmorCar.Width, pictureBoxTakeArmorCar.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         armor_car.SetPosition(5, 5, pictureBoxTakeArmorCar.Width, pictureBoxTakeArmorCar.Height);
                         armor_car.DrawArmorCar(gr);
                         pictureBoxTakeArmorCar.Image = bmp;
-                        logger.Info("Изъят автомобиль " + armor_car.ToString() + " с места " + maskedTextBox1.Text);
+                        logger.Info("Изъят автомобиль " + armor_car.ToString() + " с места " + maskedTextBoxPlace.Text);
                         Draw();
                     }
                     catch (MilitaryBaseNotFoundException ex)
