@@ -116,9 +116,9 @@ namespace WindowsFormArmorCar
         }
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (military_base.SaveData(saveFileDialog.FileName))
+                if (military_base.SaveData(saveFileDialogMilitaryBase.FileName))
                 {
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -130,9 +130,9 @@ namespace WindowsFormArmorCar
         }
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (military_base.LoadData(openFileDialog.FileName))
+                if (military_base.LoadData(openFileDialogMilitaryBase.FileName))
                 {
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -146,9 +146,9 @@ namespace WindowsFormArmorCar
 
         private void сохранитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (military_base.SaveLevel(listBoxLevels.SelectedIndex, saveFileDialog.FileName))
+                if (military_base.SaveLevel(listBoxLevels.SelectedIndex, saveFileDialogMilitaryBase.FileName))
                 {
                     MessageBox.Show("Сохранение прошло успешно", "Результат",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -163,9 +163,9 @@ namespace WindowsFormArmorCar
 
         private void загрузитьУровеньToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (military_base.LoadLevel(listBoxLevels.SelectedIndex, openFileDialog.FileName))
+                if (military_base.LoadLevel(listBoxLevels.SelectedIndex, openFileDialogMilitaryBase.FileName))
                 {
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
     MessageBoxIcon.Information);
