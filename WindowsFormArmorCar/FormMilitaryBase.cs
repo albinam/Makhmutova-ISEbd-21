@@ -135,12 +135,12 @@ namespace WindowsFormArmorCar
         }
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try { 
-                    military_base.SaveData(saveFileDialog.FileName);
+                    military_base.SaveData(saveFileDialogMilitaryBase.FileName);
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    logger.Info("Сохранено в файл " + saveFileDialog.FileName);
+                    logger.Info("Сохранено в файл " + saveFileDialogMilitaryBase.FileName);
                 }
                 catch(Exception ex)
                 {
@@ -151,12 +151,12 @@ namespace WindowsFormArmorCar
         }
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 try
                 {
-                    military_base.LoadData(openFileDialog.FileName);
+                    military_base.LoadData(openFileDialogMilitaryBase.FileName);
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    logger.Info("Загружено из файла " + openFileDialog.FileName);
+                    logger.Info("Загружено из файла " + openFileDialogMilitaryBase.FileName);
                 }
                 catch (MilitaryBaseOccupiedPlaceException ex)
                 {
