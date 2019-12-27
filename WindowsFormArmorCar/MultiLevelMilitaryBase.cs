@@ -11,7 +11,7 @@ namespace WindowsFormArmorCar
     {
         /// <summary>        
         /// Список с уровнями парковки         
-        //// </summary>       
+        /// </summary>       
         List<MilitaryBase<ITransport>> militaryBaseStages;
         /// <summary>        
         /// Сколько мест на каждом уровне    
@@ -138,4 +138,3 @@ namespace WindowsFormArmorCar
         }
     }
 }
-
