@@ -135,7 +135,7 @@ namespace WindowsFormArmorCar
         }
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+             if (saveFileDialogMilitaryBase.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
