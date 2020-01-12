@@ -48,7 +48,7 @@ namespace WindowsFormArmorCar
         /// <returns></returns>     
         public static int operator +(MilitaryBase<T, N> p, T artilleryMount)
         {
-            for (int i = 0; i < p._maxCount; i++)
+            for (int i = 0; i < p.sizeOfBase; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
