@@ -32,12 +32,12 @@ namespace WindowsFormArmorCar
         /// <param name="pictureHeight">Рамзер парковки - высота</param>         
         public MilitaryBase(int sizes, int pictureWidth, int pictureHeight)
         {
-            sizeOfBase= sizes;
+            sizeOfBase = sizes;
             places = new Dictionary<int, T>();
             placesGuns = new N[sizes];
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-            removed=new ArrayList();
+            removed = new ArrayList();
         }
         /// <summary>         
         /// Перегрузка оператора сложения         
@@ -48,11 +48,15 @@ namespace WindowsFormArmorCar
         /// <returns></returns>     
         public static int operator +(MilitaryBase<T, N> p, T artilleryMount)
         {
+            if (p.places.Count == p.sizeOfBase)
+            {
+                throw new MilitaryBaseOverflowException();
+            }
             for (int i = 0; i < p.sizeOfBase; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p.places.Add(i,artilleryMount);
+                    p.places.Add(i, artilleryMount);
                     p.places[i].SetPosition(5 + i / 5 * _placeSizeWidth + 5,
                         i % 5 * _placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
                     return i;
@@ -77,7 +81,7 @@ namespace WindowsFormArmorCar
                 return car;
             }
             throw new MilitaryBaseNotFoundException(index);
-        }  
+        }
         /// <summary>
         /// Метод проверки заполнености парковочного места (ячейки массива)         
         /// </summary>         
@@ -114,7 +118,7 @@ namespace WindowsFormArmorCar
         {
             Pen pen = new Pen(Color.Black, 3);             //границы праковки             
             g.DrawRectangle(pen, 0, 0, (sizeOfBase / 5) * _placeSizeWidth, 400);
-            for (int i = 0; i <sizeOfBase/ 4; i++)
+            for (int i = 0; i < sizeOfBase / 4; i++)
             {
                 //отрисовываем, по 5 мест на линии                 
                 for (int j = 0; j < 5; ++j)

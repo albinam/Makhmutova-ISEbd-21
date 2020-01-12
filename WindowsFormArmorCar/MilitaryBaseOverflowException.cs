@@ -8,7 +8,7 @@ namespace WindowsFormArmorCar
 {
     public class MilitaryBaseOverflowException:Exception
     {
-        public MilitaryBaseOverflowException() : base("На парковке нет свободных мест")
+        public MilitaryBaseOverflowException() : base("На военное базе нет свободных мест")
         { }
     }
 }

@@ -8,7 +8,7 @@ namespace WindowsFormArmorCar
 {
     public class MilitaryBaseNotFoundException:Exception
     {
-        public MilitaryBaseNotFoundException(int i) : base("Не найден автомобиль по месту " + i)
+        public MilitaryBaseNotFoundException(int i) : base("Не найдена машина по месту " + i)
         { }
     }
 }

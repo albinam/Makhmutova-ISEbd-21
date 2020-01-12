@@ -145,7 +145,7 @@
             // panelBlack
             // 
             this.panelBlack.AllowDrop = true;
-            this.panelBlack.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelBlack.BackColor = System.Drawing.Color.Black;
             this.panelBlack.Location = new System.Drawing.Point(15, 13);
             this.panelBlack.Name = "panelBlack";
             this.panelBlack.Size = new System.Drawing.Size(42, 42);
@@ -154,7 +154,7 @@
             // panelGreen
             // 
             this.panelGreen.AllowDrop = true;
-            this.panelGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelGreen.BackColor = System.Drawing.Color.Green;
             this.panelGreen.Location = new System.Drawing.Point(15, 61);
             this.panelGreen.Name = "panelGreen";
             this.panelGreen.Size = new System.Drawing.Size(42, 42);
@@ -208,7 +208,7 @@
             // panelPink
             // 
             this.panelPink.AllowDrop = true;
-            this.panelPink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panelPink.BackColor = System.Drawing.Color.Pink;
             this.panelPink.Location = new System.Drawing.Point(96, 157);
             this.panelPink.Name = "panelPink";
             this.panelPink.Size = new System.Drawing.Size(42, 42);

@@ -8,7 +8,7 @@ namespace WindowsFormArmorCar
 {
     public class MilitaryBaseOccupiedPlaceException: Exception
     {
-        public MilitaryBaseOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит автомобиль")
+        public MilitaryBaseOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит машина")
         { }
     }
 }
