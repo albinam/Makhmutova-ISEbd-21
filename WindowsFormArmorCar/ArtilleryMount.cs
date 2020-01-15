@@ -62,8 +62,8 @@ namespace WindowsFormArmorCar
                 GunRange = Convert.ToDouble(strs[4]);
                 Flag = Convert.ToBoolean(strs[5]);
                 Mask = Convert.ToBoolean(strs[6]);
-                num = Convert.ToString(strs[7]);
-                switch (num)
+                numOfGuns = Convert.ToString(strs[7]);
+                switch (numOfGuns)
                 {
                     case "One":
                         {
